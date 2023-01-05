@@ -5,19 +5,12 @@ import React, { useEffect, useState } from "react"
 
 function App() {   
   const [resourceType, setResourceType] = useState('posts')
-  const [items, setItems] = useState([]) //*** */
-
   console.log('App has been rendered');
-  // everything inside useEffect runs everytime the app renders unless empty array
-
+  //everything inside useEffect runs everytime the app renders unless empty array
   useEffect(()=>{    
-    //quering the API
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-      .then(response => response.json())
-      .then(json => setItems(json)) //*** */
+    console.log('resource type changed')
   },[resourceType]) // everytime resourceType changes, useEffect Hook will be run
 
-  //*** */ mapping items
   return (  
   <>
   <div >
@@ -26,12 +19,7 @@ function App() {
   <button onClick={()=> setResourceType('comments')}>comments</button>
   </div>
   <h1>{resourceType}</h1>   
-  {
-      items.map(item => {
-        return <pre>{JSON.stringify(item)}</pre>
-      })
-  }
   </>
   )
 }
-export default App 
+export default App
