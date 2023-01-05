@@ -11,3 +11,13 @@ git push -u origin main
 git remote add origin https://github.com/NelzonMamani/MERN-Web-App-Template.git
 git branch -M main
 git push -u origin main
+
+
+
+
+$ git branch basicBranch
+$ git checkout basicBranch
+
+
+this helps me set a new branch on github
+git push --set-upstream origin basicBranch
