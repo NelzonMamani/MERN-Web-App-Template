@@ -13,11 +13,7 @@ git branch -M main
 git push -u origin main
 
 
-
-
 $ git branch basicBranch
 $ git checkout basicBranch
-
-
-this helps me set a new branch on github
-git push --set-upstream origin basicBranch
+$ git commit -m "bare Hello REACT world"
+$ git push --set-upstream origin basicBranch
