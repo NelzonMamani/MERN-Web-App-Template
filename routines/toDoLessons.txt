@@ -5,3 +5,16 @@ https://www.youtube.com/watch?v=jZUHZDXmQ_A&ab_channel=WebDevSimplified
 
 
 
+
+
+
+
+Build and Deploy a Modern Full Stack ECommerce React Application with Stripe
+https://www.youtube.com/watch?v=4mOkFXyxfsU&t=135s&ab_channel=JavaScriptMastery
+
+
+
+Build and Deploy a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
+https://www.youtube.com/watch?v=jx5hdo50a2M&ab_channel=JavaScriptMastery
+
+
