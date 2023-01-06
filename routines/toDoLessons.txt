@@ -12,9 +12,16 @@ https://www.youtube.com/watch?v=jZUHZDXmQ_A&ab_channel=WebDevSimplified
 Build and Deploy a Modern Full Stack ECommerce React Application with Stripe
 https://www.youtube.com/watch?v=4mOkFXyxfsU&t=135s&ab_channel=JavaScriptMastery
 
-
-
 Build and Deploy a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
 https://www.youtube.com/watch?v=jx5hdo50a2M&ab_channel=JavaScriptMastery
+
+
+
+Build and Deploy a Full Stack TikTok Clone Application and Master TypeScript | Full Course (Part 1)
+https://www.youtube.com/watch?v=CcBHZ0t2Qwc&ab_channel=JavaScriptMastery
+https://github.com/adrianhajdin/project_tiktik 
+
+Build Modern Portfolio with NextJS, TypeScript, SSR, and React Bricks CMS
+https://www.youtube.com/watch?v=Ym6RYyRBPaA&ab_channel=CleverProgrammer
 
 
