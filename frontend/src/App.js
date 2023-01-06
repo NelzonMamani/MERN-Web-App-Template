@@ -1,37 +1,20 @@
-import React, { useEffect, useState } from "react"
-// HOOKS are only used inside funtion componets not in class components
-// HOOKS are always at the top of function componets in exact order
-// Hooks can not be nested in loops or if statemets
+import React, { useState } from "react";
+import Auth from "./Auth";
+import AuthContext from "./auth-context";
 
-function App() {   
-  const [resourceType, setResourceType] = useState('posts')
-  const [items, setItems] = useState([]) //*** */
+const App = () => {
+//using the state to dynamicallly pass the values to the context
 
-  console.log('App has been rendered');
-  // everything inside useEffect runs everytime the app renders unless empty array
-
-  useEffect(()=>{    
-    //quering the API
-    fetch(`https://jsonplaceholder.typicode.com/${resourceType}`)
-      .then(response => response.json())
-      .then(json => setItems(json)) //*** */
-  },[resourceType]) // everytime resourceType changes, useEffect Hook will be run
-
-  //*** */ mapping items
-  return (  
-  <>
-  <div >
-  <button onClick={()=> setResourceType('posts')}>Posts</button>
-  <button onClick={()=> setResourceType('users')}>Users</button>
-  <button onClick={()=> setResourceType('comments')}>comments</button>
-  </div>
-  <h1>{resourceType}</h1>   
-  {
-      items.map(item => {
-        return <pre>{JSON.stringify(item)}</pre>
-      })
-  }
-  </>
-  )
-}
-export default App 
+const [authstatus, setauthstatus] = useState(false);
+const login = () => {
+	setauthstatus(true);
+};
+return (
+	<React.Fragment>
+	<AuthContext.Provider value={{ status: authstatus, login: login }}>
+		<Auth />
+	</AuthContext.Provider>
+	</React.Fragment>
+);
+};
+export default App;
