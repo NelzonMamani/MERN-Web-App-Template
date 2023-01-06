@@ -1,8 +1,13 @@
 How To Easily Format Dates In JavaScript
 https://www.youtube.com/watch?v=jZUHZDXmQ_A&ab_channel=WebDevSimplified
 
+list
+Intro to TypeScript
+https://youtu.be/2ArU2F92rds
 
 
+https://www.youtube.com/watch?v=cchqeWY0Nak&ab_channel=CodingGarden
+Setting up vite, React, TypeScript, eslint, vitest, testing-library and react-router
 
 
 
@@ -24,4 +29,15 @@ https://github.com/adrianhajdin/project_tiktik
 Build Modern Portfolio with NextJS, TypeScript, SSR, and React Bricks CMS
 https://www.youtube.com/watch?v=Ym6RYyRBPaA&ab_channel=CleverProgrammer
 
+list
+Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB [Part 1/2]
+https://youtu.be/ngc9gnGgUdA
+ 
+list 
+Modern React Web Development Full Course - 12 Hours | 4 Real Industry Web Applications
+https://youtu.be/XxXyfkrP298
 
+
+List
+Build a FULLSTACK React Ecommerce App that is fully Responsive with Stripe Payment
+https://youtu.be/EBCdyQ_HFMo
