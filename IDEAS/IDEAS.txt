@@ -1,4 +1,6 @@
-### a social media similar to facebook only for PROGRAMMERS
+A social media App similar to facebook only for PROGRAMMERS
 others can enter as GUESTS
+
+
 
 
