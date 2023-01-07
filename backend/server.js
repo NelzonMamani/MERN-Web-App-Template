@@ -38,10 +38,9 @@ app.get("/", (req, res) => {
 mongoose.set('strictQuery', false)
 mongoose.connect(process.env.MONGO_URI)
     .then(() => {
-        const PORT = process.env.PORT || 4001
-       
+        const PORT = process.env.PORT || 4001       
         app.listen(PORT, () => {
-            console.log(`connected to DB and backend express web server running on port: ${PORT}`)
+            console.log(`Connected to DB and backend express web server running on port: ${PORT}`)
         })
     })
     .catch((error) => {
