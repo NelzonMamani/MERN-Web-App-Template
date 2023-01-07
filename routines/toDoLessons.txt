@@ -1,3 +1,9 @@
+Course of TypeScript
+Typescript for Beginners - Starter Lesson
+https://youtu.be/MOO5vrtTUTE
+https://github.com/gitdagray/typescript-course 
+
+
 How To Easily Format Dates In JavaScript
 https://www.youtube.com/watch?v=jZUHZDXmQ_A&ab_channel=WebDevSimplified
 
@@ -9,6 +15,9 @@ https://youtu.be/2ArU2F92rds
 https://www.youtube.com/watch?v=cchqeWY0Nak&ab_channel=CodingGarden
 Setting up vite, React, TypeScript, eslint, vitest, testing-library and react-router
 
+
+Typescript Project from Scratch | Complete Tutorial for Beginners
+https://www.youtube.com/watch?v=61v23Ce5SXA&ab_channel=DaveGray
 
 
 
