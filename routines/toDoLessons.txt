@@ -1,3 +1,14 @@
+DONE
+React router
+https://www.w3schools.com/REACT/react_router.asp
+
+
+
+useContext
+https://www.geeksforgeeks.org/reactjs-usecontext-hook/ 
+
+
+
 Course of TypeScript
 Typescript for Beginners - Starter Lesson
 https://youtu.be/MOO5vrtTUTE
