@@ -1,6 +1,36 @@
-DONE
+******************** WORKING ON IT (START) ********************
+MERN Stack Tutorial #1 - What is the MERN Stack?
+https://youtu.be/98BzS5Oz5E4
+
+********************* WORKING ON IT (END) *********************
+
+
+
+
+****************** FINISHED TUTORIALS (START) ******************
 React router
 https://www.w3schools.com/REACT/react_router.asp
+
+
+
+****************** FINISHED TUTORIALS (END) ********************
+React Hooks Tutorial - 12 - Fetching data with useEffect Part 1
+https://youtu.be/bYFYF2GnMy8
+
+Fetch API Introduction
+https://youtu.be/Oive66jrwBs
+
+
+Learn The MERN Stack - Express & MongoDB Rest API
+https://youtu.be/-0exw-9YJBo
+https://github.com/bradtraversy/mern-tutorial
+
+
+
+WebDevSimplified
+Learn Fetch API In 6 Minutes
+https://youtu.be/cuEtnrL9-H0
+
 
 to learn
 https://reactrouter.com/en/main/components/outlet
