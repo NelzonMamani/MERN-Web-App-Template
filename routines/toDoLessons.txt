@@ -2,6 +2,11 @@ DONE
 React router
 https://www.w3schools.com/REACT/react_router.asp
 
+to learn
+https://reactrouter.com/en/main/components/outlet
+https://github.com/remix-run/react-router/tree/dev/examples
+
+
 
 
 useContext
