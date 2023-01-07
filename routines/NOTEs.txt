@@ -4,3 +4,9 @@
  backend on 4000
  frontend on 3000
  learn CORS well
+
+
+
+{JSON} Placeholder
+Free fake API for testing and prototyping.
+https://jsonplaceholder.typicode.com/
