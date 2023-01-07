@@ -1,2 +1,6 @@
  https://reactrouter.com/en/main/start/tutorial
  watch the structure
+
+ backend on 4000
+ frontend on 3000
+ learn CORS well
