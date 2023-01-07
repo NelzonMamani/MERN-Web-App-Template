@@ -2,9 +2,9 @@
 
 ### My lab and work enviroment where I experiment with pieces of code
 
-1. FIRST STAGE: I experiment with codes here
-MERN-Scripts-That-Work/**backend** for backend API  
-MERN-Scripts-That-Work/**frontend** for frontend REACT user interface  
+1. FIRST STAGE: I experiment with codes here:
+- MERN-Scripts-That-Work/**backend** for backend API  
+- MERN-Scripts-That-Work/**frontend** for frontend REACT user interface  
 
 
 
