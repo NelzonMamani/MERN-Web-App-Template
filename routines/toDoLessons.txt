@@ -4,6 +4,12 @@ MERN Stack Tutorial #1 - What is the MERN Stack?
 https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&ab_channel=TheNetNinja
 https://github.com/iamshaunjp/MERN-Stack-Tutorial
 
+MERN Authentication Tutorial #1 - Intro & Starter Project
+https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&ab_channel=TheNetNinja
+
+
+Material UI Tutorial #1 - Intro & Setup
+https://www.youtube.com/watch?v=0KEpWHtG10M&list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58&ab_channel=TheNetNinja
 
 ********************* WORKING ON IT (END) *********************
 ****************** FINISHED TUTORIALS (START) ******************
@@ -11,11 +17,18 @@ React router
 https://www.w3schools.com/REACT/react_router.asp
 
 ****************** FINISHED TUTORIALS (END) ********************
+useContext
+https://reactjs.org/docs/hooks-reference.html#usecontext
 
 freeCodeCamp.org
 React State Management – Intermediate JavaScript Course
 https://youtu.be/-bEzt5ISACA
 https://github.com/jherr/fcc-state
+
+
+React & TypeScript - Course for Beginners
+https://youtu.be/FJDVKeh7RJI
+https://github.com/piyush-eon/react-typescript-taskify
 
 
 
