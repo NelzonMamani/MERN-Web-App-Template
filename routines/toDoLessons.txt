@@ -151,7 +151,18 @@ form validation
 Learn Zod In 30 Minutes
 https://youtu.be/L6BE-U3oy80
 
+Full Stack Projects
+https://www.youtube.com/playlist?list=PLChiukrA-RMOEB1PRQqB1NITIRsDz9pIN
+
+E-Commerce tutorial with Next.js, React, Tailwind, MongoDB and Stripe
+https://www.youtube.com/watch?v=hlh1zR2Wjvs&list=PLChiukrA-RMOEB1PRQqB1NITIRsDz9pIN&index=2&ab_channel=CodingWithDawid
+https://github.com/dejwid/nextjs-ecommerce
+
 =================>>>> YEAR 2023 <<<<=================
+
+Build a Fullstack Blog App using MERN (mongo, express, react, node)
+https://youtu.be/xKs2IZZya7c
+https://github.com/dejwid/mern-blog
 
 Build & Deploy TypeScript MERN ECommerce Website Like Amazon
 https://www.youtube.com/watch?v=Lo_HgTT0D68&ab_channel=CodingwithBasir
