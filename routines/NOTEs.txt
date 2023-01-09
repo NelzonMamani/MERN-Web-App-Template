@@ -10,3 +10,6 @@
 {JSON} Placeholder
 Free fake API for testing and prototyping.
 https://jsonplaceholder.typicode.com/
+
+
+https://www.youtube.com/watch?v=qwM23_kF4v4&ab_channel=AdrianTwarog

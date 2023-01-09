@@ -16,6 +16,9 @@ https://www.youtube.com/watch?v=0KEpWHtG10M&list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWu
 React router
 https://www.w3schools.com/REACT/react_router.asp
 
+Another 5 Must Know JavaScript Features That Almost Nobody Knows
+https://www.youtube.com/watch?v=yJDofSGTSPQ&ab_channel=WebDevSimplified
+
 ****************** FINISHED TUTORIALS (END) ********************
 useContext
 https://reactjs.org/docs/hooks-reference.html#usecontext
@@ -127,3 +130,18 @@ https://youtu.be/XxXyfkrP298
 List
 Build a FULLSTACK React Ecommerce App that is fully Responsive with Stripe Payment
 https://youtu.be/EBCdyQ_HFMo
+
+
+
+
+Zod Makes TypeScript Even Better
+https://www.youtube.com/watch?v=9UVPk0Ulm6U&ab_channel=WebDevSimplified
+
+form validation
+Learn Zod In 30 Minutes
+https://youtu.be/L6BE-U3oy80
+
+=================>>>> YEAR 2023 <<<<=================
+
+Build & Deploy TypeScript MERN ECommerce Website Like Amazon
+https://www.youtube.com/watch?v=Lo_HgTT0D68&ab_channel=CodingwithBasir
