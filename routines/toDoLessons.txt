@@ -23,6 +23,13 @@ Another 5 Must Know JavaScript Features That Almost Nobody Knows
 https://www.youtube.com/watch?v=yJDofSGTSPQ&ab_channel=WebDevSimplified
 
 ****************** FINISHED TUTORIALS (END) ********************
+
+
+React Axios API Requests | Axios with React JS Tutorial
+https://www.youtube.com/watch?v=ZEKBDXGnD4s&ab_channel=DaveGray
+https://github.com/gitdagray/react_axios_requests
+
+
 useContext
 https://reactjs.org/docs/hooks-reference.html#usecontext
 
