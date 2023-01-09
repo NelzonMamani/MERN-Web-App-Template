@@ -1,3 +1,9 @@
-live server
-beautify
-pretify
+
+Live Server
+Code Runner
+ES7+ React/Redux/React-Native snippe
+REST Client
+Prettier - Code formatter
+
+1. Select the text you want to Prettify
+2. (CMD/CTRL + Shift + P -> Format Selection
