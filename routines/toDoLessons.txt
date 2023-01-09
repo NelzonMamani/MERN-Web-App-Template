@@ -1,3 +1,6 @@
+Build Real Time Face Detection With JavaScript
+https://www.youtube.com/watch?v=CVClHLwv-4I&list=PLZlA0Gpn_vH8DWL14Wud_m8NeNNbYKOkj&ab_channel=WebDevSimplified
+
 ******************** WORKING ON IT (START) ********************
 The Net Ninja UDEMY TUTOR
 MERN Stack Tutorial #1 - What is the MERN Stack?
