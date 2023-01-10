@@ -158,6 +158,10 @@ E-Commerce tutorial with Next.js, React, Tailwind, MongoDB and Stripe
 https://www.youtube.com/watch?v=hlh1zR2Wjvs&list=PLChiukrA-RMOEB1PRQqB1NITIRsDz9pIN&index=2&ab_channel=CodingWithDawid
 https://github.com/dejwid/nextjs-ecommerce
 
+course Dave Gray
+Typescript for Beginners - Starter Lesson
+https://www.youtube.com/watch?v=MOO5vrtTUTE&list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89zq_b&ab_channel=DaveGray
+
 =================>>>> YEAR 2023 <<<<=================
 
 Build a Fullstack Blog App using MERN (mongo, express, react, node)

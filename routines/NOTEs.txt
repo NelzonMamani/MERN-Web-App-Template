@@ -17,3 +17,6 @@ https://www.youtube.com/watch?v=qwM23_kF4v4&ab_channel=AdrianTwarog
 
 HTML Events 
 https://www.w3schools.com/tags/ref_eventattributes.asp
+
+
+what is the job of assertions in JS
