@@ -1,0 +1,47 @@
+npm init -y
+npm i express dotenv mongoose
+npm i --save-dev nodemon
+
+"scripts": { "start": "node server.js",   "devStart": "nodemon server.js"  }
+npm run devStart 
+
+create .env and server.js
+
+node server.js
+ctrl c
+npm i -g nodemon
+nodemon server.js
+
+
+ 
+
+
+ 
+npm i npx
+
+mkdir server
+cd server
+npm i -g nodemon // installing nodemon globally 
+npm i express bofy-parser bcrypt cors dotenv gridfs-stream multer multer-gridfs-storage helmet morgan jsonwebtoken moongoose 
+ 
+
+“type”: “module”,   // import statements rather than require statements
+
+www.mongodb.com/atlas/database
+
+https://www.mongodb.com/atlas/database
+create a shared cluster
+AWS
+ 
+
+/ means the root of the current drive;
+./ means the current directory;
+../means the parent of the current directory;
+
+Create asynchronous then async await function 
+
+library opening times
+
+ ...req.body spreads the object into its components or attributes destructure 
+
+
