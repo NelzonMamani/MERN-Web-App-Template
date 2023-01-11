@@ -46,7 +46,7 @@ app.post('/users/login', async (req, res) => {
         if(await bcrypt.compare(req.body.password, user.password)){
             res.send('Success')
         } else {
-            res.send('Not allowed')
+            res.status(403).send('403 Forbidden, not allowed')
         }
     } catch (error) {
         res.status(500).send('500 Internal Server Error')

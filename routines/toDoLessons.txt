@@ -164,9 +164,15 @@ https://www.youtube.com/watch?v=MOO5vrtTUTE&list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89z
 
 =================>>>> YEAR 2023 <<<<=================
 
+
 Build a Fullstack Blog App using MERN (mongo, express, react, node)
 https://youtu.be/xKs2IZZya7c
 https://github.com/dejwid/mern-blog
 
 Build & Deploy TypeScript MERN ECommerce Website Like Amazon
 https://www.youtube.com/watch?v=Lo_HgTT0D68&ab_channel=CodingwithBasir
+
+Realtime Chat App - React, Node.js and Socket.io
+https://www.youtube.com/playlist?list=PL63c_Ws9ecIRZ6njHRi3cuCkNSfzqyLBn
+
+
