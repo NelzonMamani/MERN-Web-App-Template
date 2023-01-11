@@ -5,5 +5,9 @@ ES7+ React/Redux/React-Native snippe
 REST Client
 Prettier - Code formatter
 
+Git Project Manager  v1.8.2 
+Custom CSS and JS Loader
+JavaScript and TypeScript Nightly
+
 1. Select the text you want to Prettify
 2. (CMD/CTRL + Shift + P -> Format Selection

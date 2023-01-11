@@ -20,3 +20,11 @@ https://www.w3schools.com/tags/ref_eventattributes.asp
 
 
 what is the job of assertions in JS
+
+
+Build Node.js User Authentication - Password Login
+How To Manage User Roles In Node.js
+JWT Authentication Tutorial - Node.js
+React Authentication Crash Course With Firebase And Routing
+Build A REST API With Node.js, Express, & MongoDB - Quick
+ 
