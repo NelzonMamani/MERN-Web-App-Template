@@ -1,9 +1,8 @@
 require('dotenv').config()
 const express = require('express');
 const bcrypt = require('bcrypt')
-const {
-    users
-} = require('./data')
+const {ROLE, users} = require('./data')
+const {authUser, authRole} = require('./basicAuth')
 const projectRouter = require('./routes/projects')
 const app = express();
 
@@ -69,12 +68,23 @@ app.post('/users/login', async (req, res) => {
 app.get('/', (req, res) => {
     res.send('Home Page')
 })
-app.get('/dashboard', (req, res) => {
+
+
+
+// Adding a middleware authUser to this route
+// Only users that are authenticated can have access to this page
+app.get('/dashboard', authUser, (req, res) => {
     res.send('Dasboard Page')
 })
-app.get('/admin', (req, res) => {
+
+
+// we want only admins to have access to this page
+// authUser then authenticate that user has a role of admin
+app.get('/admin', authUser, authRole(ROLE.ADMIN), (req, res) => {
     res.send('Admin Page')
 })
+
+
 
 
 // middleware function
@@ -88,6 +98,8 @@ function setUser(req, res, next) {
     }
     next()
 }
+
+
 
 
 const PORT = process.env.PORT || 4001
