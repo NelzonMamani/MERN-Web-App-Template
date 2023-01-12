@@ -16,3 +16,5 @@ module.exports = {
     { id: 3, name: "Joe's Project", userId: 3 }
   ]
 }
+
+// TODO password needs to be implemented in users

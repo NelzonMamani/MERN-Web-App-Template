@@ -20,7 +20,7 @@ const app = express();
 // MIDLEWARES
 app.use(express.json()) // to pull data from POST requests
 app.use(setUser) // setting up a user
-app.use('projects', projectRouter) // projectRouter is dedicated to path projects
+app.use('/projects', projectRouter) // projectRouter is dedicated to path projects
 
 // const users = []
 
@@ -80,10 +80,12 @@ app.get('/dashboard', authUser, (req, res) => {
 
 // we want only admins to have access to this page
 // authUser then authenticate that user has a role of
+// we can change for only BASIC users with authRole(ROLE.BASIC)
 app.get('/admin', authUser, authRole(ROLE.ADMIN), (req, res) => {
     res.send('Admin Page')
 })
 
+ 
 
 
 
