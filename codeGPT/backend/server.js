@@ -79,7 +79,7 @@ app.get('/dashboard', authUser, (req, res) => {
 
 
 // we want only admins to have access to this page
-// authUser then authenticate that user has a role of admin
+// authUser then authenticate that user has a role of
 app.get('/admin', authUser, authRole(ROLE.ADMIN), (req, res) => {
     res.send('Admin Page')
 })
