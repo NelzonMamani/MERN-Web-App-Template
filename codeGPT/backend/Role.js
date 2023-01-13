@@ -4,12 +4,12 @@ module.exports = {
 }
 
 class Role {
-  constructor(role) {
+                  constructor(role) {
     this.role = role;
   }
 
   isAdmin() {
-    return this.role === 'admin';
+         return this.role === 'admin';
   }
 
   isUser() {

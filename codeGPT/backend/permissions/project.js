@@ -18,7 +18,7 @@ function scopedProjects(user, projects) {
   return projects.filter(project => project.userId === user.id)
 }
 
-function canDeleteProject(user, project){
+function canDeleteProject(user, project) {
   // you can only delete the project that you created. 
   return project.userId === user.id
 
