@@ -6,7 +6,7 @@ const User = require('../models/user');
 // These tokens can be used to authenticate the user on subsequent requests to the server.
 const jwt = require('jsonwebtoken');
 
-const {verifyToken, authorize} = require('./config/middleware');
+const {verifyToken, authorize} = require('../config/middleware');
 router.get('/admin', verifyToken, authorize, (req, res) => {
     res.send('Protected Route');
 });
