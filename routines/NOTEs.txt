@@ -1,0 +1,34 @@
+ https://reactrouter.com/en/main/start/tutorial
+ watch the structure
+
+ backend on 4000
+ frontend on 3000
+ learn CORS well
+
+
+
+{JSON} Placeholder
+Free fake API for testing and prototyping.
+https://jsonplaceholder.typicode.com/
+
+
+https://www.youtube.com/watch?v=qwM23_kF4v4&ab_channel=AdrianTwarog
+
+
+HTML Events 
+https://www.w3schools.com/tags/ref_eventattributes.asp
+
+
+what is the job of assertions in JS
+
+
+Build Node.js User Authentication - Password Login
+How To Manage User Roles In Node.js
+JWT Authentication Tutorial - Node.js
+React Authentication Crash Course With Firebase And Routing
+Build A REST API With Node.js, Express, & MongoDB - Quick
+Node.js Passport Login System Tutorial
+ 
+
+
+ CTRL P to search for file names 

@@ -1,0 +1,4 @@
+CTRL + P to search for file names
+
+1. Select the text you want to Prettify
+2. CTRL + Shift + P -> Format Selection

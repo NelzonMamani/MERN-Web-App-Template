@@ -1,0 +1,10 @@
+
+An object literal is a comma-separated list of name-value pairs inside of curly braces.
+var greeting = {
+    fullname: "Michael Jackson",
+    greet: (message, name) => {
+        console.log(message + " " + name + "!!");
+    }
+};
+
+
