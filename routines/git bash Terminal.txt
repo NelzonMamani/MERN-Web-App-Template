@@ -3,7 +3,14 @@ echo "# MERN-Web-App-Template" >> README.md
 git init
 git add -A
 git commit -m "first commit"
+
+git config --global user.email "nelzonm@gmail.com"
+git config --global user.name "Nelzon Mamani"
+
+
 git branch -M main
+git checkout main
+
 git remote add origin https://github.com/NelzonMamani/MERN-Web-App-Template.git
 git push -u origin main
 
