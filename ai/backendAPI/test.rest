@@ -10,6 +10,9 @@ Content-Type: application/json
     "status": "active"
 }
 
+### 
+GET http://localhost:4000/users
+
 
 ###
 POST http://localhost:4000/users/register
@@ -72,3 +75,8 @@ GET http://localhost:4000/users/me
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRkMzZhM2FiZWZmZjI4OTYwYTI1MCIsImVtYWlsIjoicHJlbWl1bXVzZXJ4eXpAZXhhbXBsZS5jb20iLCJpYXQiOjE2NzM4NDM1NjIsImV4cCI6MTY3Mzg0NzE2Mn0.ApRYGi5EbXvUmEiGrvzW9ou1C6TO2xwshU6Qzh6ofHk
 
+
+###
+POST http://localhost:4000/users/logoutAll
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRkMzZhM2FiZWZmZjI4OTYwYTI1MCIsImVtYWlsIjoicHJlbWl1bXVzZXJ4eXpAZXhhbXBsZS5jb20iLCJpYXQiOjE2NzM4NDM1NjIsImV4cCI6MTY3Mzg0NzE2Mn0.ApRYGi5EbXvUmEiGrvzW9ou1C6TO2xwshU6Qzh6ofHk

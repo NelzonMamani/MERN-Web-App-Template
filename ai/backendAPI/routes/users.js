@@ -34,6 +34,7 @@ router.post("/register", async (req, res) => {
   }
 });
 
+// login
 router.post("/login", async (req, res) => {
   try {
     // Find a user in the database with the provided email
@@ -57,6 +58,13 @@ router.post("/login", async (req, res) => {
 
     // Generate a JSON web token
     const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+    console.log(token);
+    // Add the token to the user's tokens array
+    user.tokens = user.tokens.concat({ token });
+    await user.save();
+
+    // // Send the JSON web token and the user object in the response
+    // res.header("authorization", token).send({ message: "Logged in successfully", user });
 
     // Send the JSON web token and the user object in the response
     res
@@ -252,4 +260,91 @@ router.post("/logout", authenticate, async (req, res) => {
     res.status(500).send(error);
   }
 });
+
+// 9. Logout all devices (POST /users/logoutAll)
+// router.post("/logoutAll", async (req, res) => {
+//   try {
+//     const decoded = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+
+//     console.log(req.headers.authorization);
+//     const user = await User.findOne({_id: decoded._id, 'tokens.token': req.headers.authorization});
+//     console.log(user.tokens.token);
+//     // Invalidate all of the user's tokens
+//     user.tokens = [];
+//     await user.save();
+//     res.send({ message: "Logged out from all devices successfully" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+// router.post("/logoutAll", async (req, res) => {
+//   try {
+//     // Verify the JWT token in the request headers
+//     const decoded = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+
+//     // Find the user in the database by their ID and the token in the tokens array
+//     const user = await User.findOne({ _id: decoded._id, "tokens.token": req.headers.authorization });
+
+//     // If no user is found, send a 401 response
+//     if (!user) {
+//       return res.status(401).send("Unauthorized");
+//     }
+
+//     // ************** Remove the token from the user's tokens array ******************
+//     user.tokens = user.tokens.filter((token) => token.token !== req.headers.authorization);
+
+//     // Save the updated user in the database
+//     await user.save();
+
+//     // Send a message indicating that the user has been logged out from all devices
+//     res.send({ message: "Logged out from all devices successfully" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+// router.post('/logoutAll', async (req, res) => {
+//   try {
+//       // Verify the JWT token and get the user's ID
+//       const decoded = jwt.verify(req.headers.authorization, process.env.JWT_SECRET);
+
+//       // Find the user in the database using the ID
+//       const user = await User.findById(decoded._id);
+
+//       // Invalidate all of the user's tokens
+//       user.tokens = [];
+//       await user.save();
+
+//       res.send({ message: 'Logged out from all devices successfully' });
+//   } catch (error) {
+//       res.status(500).send(error);
+//   }
+// });
+
+router.post("/logoutAll", async (req, res) => {
+  try {
+    // Get the token string from the Authorization header
+    // removing the "Bearer " prefix from the value of the "Authorization" header, leaving just the token.
+    const token = req.headers.authorization.replace("Bearer ", "");
+
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    const user = await User.findById(decoded._id);
+    console.log("USER, BEFORE REMOVING TOKENS");
+
+    console.log(user);
+    // Invalidate all of the user's tokens
+    user.tokens = [];
+    // Save the updated user in the database
+    await user.save();
+    console.log("USER, AFTER REMOVING TOKENS");
+    console.log(user);
+
+    res.send({ message: "Logged out from all devices successfully" });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
 module.exports = router;

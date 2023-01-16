@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcryptjs");
+//const bcrypt = require("bcryptjs");
 
 const ROLE = {
   ADMIN: "admin",
@@ -37,8 +37,14 @@ const userSchema = new mongoose.Schema({
   status: {
     type: String,
     enum: ["active", "inactive"],
-    default: "active"
+    default: "active",
+  },
+  tokens: [{
+    token: {
+        type: String,
+        required: true
     }
+  }]
 });
 
 // // Hash the user's password before saving it to the database
