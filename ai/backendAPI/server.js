@@ -3,10 +3,15 @@ const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/auth");
 
+const usersRouter = require("./routes/users");
+
+
 const app = express();
 
 app.use(express.json()); // to access req and res objects
 app.use("/auth", authRoutes);
+app.use("/users", usersRouter);
+
 
 app.get("/", (req, res) => {
   res.json({

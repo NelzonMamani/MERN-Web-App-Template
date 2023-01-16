@@ -1,0 +1,26 @@
+list of endpoints you might consider implementing for your user CRUD operations:
+
+
+Create User - POST /users/ - Allows a client to create a new user by sending a JSON payload with the user's information (name, email, password, etc.).
+
+Read All Users - GET /users/ - Retrieves a list of all users in the database.
+
+Read One User - GET /users/:id - Retrieves a specific user by their id.
+
+Update User - PUT /users/:id - Allows a client to update a specific user by their id, by sending a JSON payload with the updated information.
+
+Delete User - DELETE /users/:id - Allows a client to delete a specific user by their id.
+
+User Pagination - GET /users?page=1&limit=10 - Retrieves a specific page of users with a specific number of users per page.
+
+User Filtering - GET /users?name=John&role=admin - Retrieves a list of users filtered by specific criteria (e.g name, role, status, etc.)
+
+User sorting - GET /users?sort=name - Retrieves a list of users sorted by specific criteria
+
+User Search - GET /users?search=john - Retrieves a list of users filtered by keyword search
+
+User Login - POST /users/login - Allows a client to login by sending a JSON payload with the user's email and password.
+
+User Logout - POST /users/logout - Allows a client to logout by sending a JSON payload with the user's id
+
+User Refresh Token - POST /users/refresh_token - Allows a client to refresh token by sending a JSON payload with the user's refresh token
