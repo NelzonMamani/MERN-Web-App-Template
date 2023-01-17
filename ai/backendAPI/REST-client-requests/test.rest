@@ -20,9 +20,9 @@ Content-Type: application/json
 
 {   
     "name": "Roger Molina",
-    "email": "roger@Molina.com",
+    "email": "roger@molina.com",
     "password": "plainPassword",
-    "role": "admin"
+    "role": "basic"
 }
 
 ###

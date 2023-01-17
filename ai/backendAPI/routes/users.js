@@ -250,11 +250,104 @@ router.get("/me", authenticate, async (req, res) => {
 // });
 
 // Logout a user (POST /users/logout)
-router.post("/logout", authenticate, async (req, res) => {
+// router.post("/logout", authenticate, async (req, res) => {
+//   try {
+//     // Get the current token from the Authorization header
+//     const token = req.headers.authorization.replace("Bearer ", "");
+
+//     // Remove the token from the user's tokens array
+//     req.user.tokens = req.user.tokens.filter((t) => t.token !== token);
+//     await req.user.save();
+//     res.send({ message: "Successfully logged out" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+
+// router.post("/logout", authenticate, async (req, res) => {
+//   try {
+//     // Get the token from the Authorization header
+//     const token = req.headers.authorization.replace("Bearer ", "");
+
+//     // Remove the token from the user's tokens array
+//     const updatedUser = await User.findByIdAndUpdate(req.user._id, {$pull: { tokens: { token: token } }});
+//     if (!updatedUser) {
+//         return res.status(404).send("User not found");
+//     }
+//     res.send({ message: "Successfully logged out" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+// router.post("/logout", authenticate, async (req, res) => {
+//   try {
+//     // Find the index of the current token in the user's tokens array
+//     const tokenIndex = req.user.tokens.findIndex((token) => token.token === req.token);
+
+//     // Remove the current token from the user's tokens array
+//     req.user.tokens.splice(tokenIndex, 1);
+
+//     // Save the user
+//     await req.user.save();
+
+//     res.send({ message: "Successfully logged out" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+// router.post("/logout", authenticate, async (req, res) => {
+//   try {
+//     // Get the token from the request
+//     const token = req.headers.authorization.replace("Bearer ", "");
+
+//     // Find the user with the matching token and remove it from their tokens array
+//     await User.findOneAndUpdate(
+//       { _id: req.user._id, tokens: { $elemMatch: { token } } },
+//       { $pull: { tokens: { token } } }
+//     );
+
+//     res.send({ message: "Successfully logged out" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+// router.post("/logout", authenticate, async (req, res) => {
+//   try {
+//     // Get the token from the request headers
+//     const token = req.headers.authorization.replace("Bearer ", "");
+
+//     // Find the user object associated with that token
+//     const user = await User.findOne({ _id: req.user._id, tokens: token });
+
+//     // Remove the token from the user's token array
+//     user.tokens = user.tokens.filter((t) => t !== token);
+
+//     // Save the updated user object
+//     await user.save();
+
+//     res.send({ message: "Successfully logged out" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+
+router.post("/logout", async (req, res) => {
   try {
-    // Invalidate the user's token
-    req.user.token = null;
-    await req.user.save();
+    // Get the token from the headers
+    const token = req.headers['authorization'];
+    // Verify the token
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // Find the user by ID
+    const user = await User.findById(decoded._id);
+    // Remove the invalid token from the user's tokens array
+    user.tokens = user.tokens.filter((t) => t.token !== token);
+    // Save the updated user
+    await user.save();
+    // Send a success response
     res.send({ message: "Successfully logged out" });
   } catch (error) {
     res.status(500).send(error);

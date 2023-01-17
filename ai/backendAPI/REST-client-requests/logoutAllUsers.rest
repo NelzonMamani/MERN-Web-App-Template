@@ -26,9 +26,4 @@ Content-Type: application/json
 POST http://localhost:4000/users/logoutAll
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1OWE0NDVlOGQ0MTAzNTVlN2MyMmQiLCJpYXQiOjE2NzM4OTk4NzJ9.z0hBX1a6ppBidRMYcwo79u5iZ3fPm5ljXbNtjNeovgw
-
-
-###
-POST http://localhost:4000/users/logoutAll
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1OWE0NDVlOGQ0MTAzNTVlN2MyMmQiLCJpYXQiOjE2NzM4OTk0MjB9.Sm0hKnhvqOiGYISaRcJJCSr-OaZYqT3Q2ODMzYPg2lU
+ 

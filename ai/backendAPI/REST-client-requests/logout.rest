@@ -1,0 +1,47 @@
+### 
+GET http://localhost:4000/users
+
+###
+POST http://localhost:4000/users/register
+Content-Type: application/json
+
+{   
+    "name": "Nikola Tesla",
+    "email": "nikola@tesla.com",
+    "password": "NikolaTesla",
+    "role": "premium"
+}
+
+###
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{         
+    "email": "nikola@tesla.com",
+    "password": "NikolaTesla"
+}
+
+
+###
+
+Method: GET url HTTP/1.1
+URL: http://localhost:4000/users/logout
+Headers:
+
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1ZmM4MDI2M2Y5NmM1ZGUzNGU0YzAiLCJpYXQiOjE2NzM5MjM0Mzh9.wUUfeiq6p2-7bPuaKV9vrIEmWTxOzyP1YweethXarNM
+
+###
+
+###
+ 
+###
+
+
+
+
+###
+DELETE http://localhost:4000/users/logout
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2M1ZmM4MDI2M2Y5NmM1ZGUzNGU0YzAiLCJpYXQiOjE2NzM5MjIyMjZ9.C7XNMJKO8HjAMVpHxxOW-WpSfouQgymylO4r_C_WfAA
+ 
