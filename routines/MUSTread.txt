@@ -1,0 +1,13 @@
+
+backendSocialMediaStructureGenerator.js generates folders and files 
+ 
+backendDirectoryViewer.js views the a folder and creates a file directory_structure.js
+
+To run backendDirectoryViewer.js write:
+node backendDirectoryViewer.js c:\Users\Nelzon\MERN-Web-App-Template\ai\backendSocialMediaTemplate\ai\backend1>
+
+
+ 
+
+directory_structure.js is the result of running the code above
+

@@ -1,0 +1,23 @@
+ 
+generate a List of Possible Models for a Volunteering Application. When done, create code for backendVolunteeringStructureGenerator.js
+
+
+
+generate a List of Possible Models for a hashtag Application. Suggest file name for that list and put it at the top of that list like a title. 
+ 
+    
+generate a List of Possible Models for a hashtag Application. Suggest file name for that list.   
+generate a List of Possible Models for a charity Application. Suggest file name for that list.
+generate a List of Possible Models for a church Application. Suggest file name for that list.
+generate a List of Possible Models for a dentistry Application. Suggest file name for that list.
+generate a List of Possible Models for a school Application. Suggest file name for that list.
+generate a List of Possible Models for a gym Application. Suggest file name for that list.
+generate a List of Possible Models for an online store Application. Suggest file name for that list.
+
+
+
+generate a List of Possible Models for a Volunteering Application. when done, create code for backendVolunteeringStructureGenerator.js
+
+
+
+generate a List of Possible Models for a rentals for all occasions Application  like airbnb. Suggest file name for that list. 
