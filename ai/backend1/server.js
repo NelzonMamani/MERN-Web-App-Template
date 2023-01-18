@@ -2,13 +2,9 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const mongoose = require("mongoose");
-//const User = require("./models/user");
-
-
+ 
 const app = express();
 app.use(express.json());
-
-
 
 
 // ACCESS_TOKEN_SECRET and REFRESH_TOKEN_SECRET are stored in a .env file
