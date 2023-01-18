@@ -1,0 +1,17 @@
+MongoDB instalation 
+https://www.mongodb.com/try/download/community
+https://www.mongodb.com/try/download/shell
+
+C:\Program Files\MongoDB\Server\6.0\data\
+
+
+C:\Program Files\MongoDB\Server\6.0\bin\mongod.exe
+
+To start the MongoDB server, run the command: mongod 
+To stop mongod run this command: net stop MongoDB
+
+cd C:\Program Files\MongoDB\Server\6.0\bin\
+
+mongodb://localhost:27017/testDB
+
+https://stackoverflow.com/questions/20796714/how-do-i-start-mongo-db-from-windows

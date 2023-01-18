@@ -335,24 +335,51 @@ router.get("/me", authenticate, async (req, res) => {
 //   }
 // });
 
-router.post("/logout", async (req, res) => {
+// router.post("/logout", async (req, res) => {
+//   try {
+//     // Get the token from the headers
+//     const token = req.headers['authorization'];
+//     // Verify the token
+//     const decoded = jwt.verify(token, process.env.JWT_SECRET);
+//     // Find the user by ID
+//     const user = await User.findById(decoded._id);
+//     // Remove the invalid token from the user's tokens array
+//     user.tokens = user.tokens.filter((t) => t.token !== token);
+//     // Save the updated user
+//     await user.save();
+//     // Send a success response
+//     res.send({ message: "Successfully logged out" });
+//   } catch (error) {
+//     res.status(500).send(error);
+//   }
+// });
+router.post("/logout", authenticate, async (req, res) => {
   try {
-    // Get the token from the headers
-    const token = req.headers['authorization'];
-    // Verify the token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // Get the token string from the Authorization header
+    const token = req.headers.authorization.replace("Bearer ", "");
+
     // Find the user by ID
-    const user = await User.findById(decoded._id);
-    // Remove the invalid token from the user's tokens array
-    user.tokens = user.tokens.filter((t) => t.token !== token);
-    // Save the updated user
+    const user = await User.findById(req.user._id);
+
+    // Iterate through the user's tokens array to find the current token
+    for (let i = 0; i < user.tokens.length; i++) {
+      if (user.tokens[i].token === token) {
+        // Remove the current token from the user's tokens array
+        user.tokens.splice(i, 1);
+        break;
+      }
+    }
+
+    // Save the updated user with the current token removed
     await user.save();
-    // Send a success response
+
     res.send({ message: "Successfully logged out" });
   } catch (error) {
     res.status(500).send(error);
   }
 });
+
+
 
 // 9. Logout all devices (POST /users/logoutAll)
 // router.post("/logoutAll", async (req, res) => {
