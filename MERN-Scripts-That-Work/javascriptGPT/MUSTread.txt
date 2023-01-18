@@ -1,0 +1,26 @@
+
+backendSocialMediaStructureGenerator.js generates folders and files 
+ 
+backendDirectoryViewer.js views the a folder and creates a file directory_structure.js
+
+To run backendDirectoryViewer.js write:
+node backendDirectoryViewer.js c:\Users\Nelzon\MERN-Web-App-Template\ai\backendSocialMediaTemplate\ai\backend1>
+
+node backendDirectoryViewerWithNodeModules.js c:\Users\Nelzon\MERN-Web-App-Template\ai\backendSocialMedia\ai\backend1>
+
+
+ 
+
+directory_structure.js is the result of running the code above
+
+The below structure viewer works viewFolder is the best even if it gives the node_modules: 
+
+viewFolder.js
+node viewFolder.js c:\Users\Nelzon\MERN-Web-App-Template\ai\backendSocialMedia
+directory_structureXYZ.json
+const structure = require('./directory_structureXYZ.json');
+
+structureViewer.js
+node structureViewer.js  
+structureXYZ.json
+const structure = require('./structureXYZ.json');
