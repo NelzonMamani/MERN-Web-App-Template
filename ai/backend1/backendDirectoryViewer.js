@@ -17,7 +17,7 @@ const viewStructure = (dir) => {
     console.log(json);
     
     fs.writeFileSync('directoryStructure.json', JSON.stringify(json, null, 2));
-
+ 
 };
 
 viewStructure(`c:\\Users\\Nelzon\\MERN-Web-App-Template\\ai\\backendSocialMedia`);

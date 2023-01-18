@@ -2,6 +2,8 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const express = require("express");
 const mongoose = require("mongoose");
+const directoryStructure = require('./directory_structureXYZ.json');
+//const directoryStructure = require('./structureXYZ.json');
  
 const app = express();
 app.use(express.json());
@@ -17,7 +19,7 @@ app.post("/login", (req, res) => {
     // Create a refresh token
     const refreshToken = jwt.sign({ userId: req.body.userId }, REFRESH_TOKEN_SECRET);
     // Send the tokens to the client
-    res.json({ accessToken, refreshToken });
+    res.json({ accessToken, refreshToken, directoryStructure });
 });
 
 app.post("/refresh-token", (req, res) => {

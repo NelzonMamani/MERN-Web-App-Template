@@ -1,0 +1,1 @@
+I can't read the json file "structure.json" that was created as it was written in one line. Remember when you made an output "directory_structure.json" ? that was perfect to read. Can you rewrite the code so I can also read it like before? Many thanks 

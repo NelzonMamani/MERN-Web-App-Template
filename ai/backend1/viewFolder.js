@@ -20,4 +20,4 @@ const createDirectoryStructure = (directory, structure) => {
 
 createDirectoryStructure(directoryPath, directoryStructure);
 console.log(directoryStructure);
-fs.writeFileSync('directory_structure2.json', JSON.stringify(directoryStructure, null, 2));
+fs.writeFileSync('directory_structureXYZ.json', JSON.stringify(directoryStructure, null, 2));
