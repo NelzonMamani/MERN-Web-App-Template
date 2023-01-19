@@ -1,6 +1,8 @@
 npm init -y
-npm i express dotenv mongoose
+npm i express dotenv mongoose 
 npm i --save-dev nodemon
+npm i jsonwebtoken 
+npm i @hapi/joi
 
 "scripts": { "start": "node server.js",   "devStart": "nodemon server.js"  }
 npm run devStart 
