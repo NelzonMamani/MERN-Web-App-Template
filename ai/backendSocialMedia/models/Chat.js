@@ -1,25 +1,29 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const messageSchema = new Schema({
+const chatSchema = new Schema({
+    conversation: {
+        type: mongoose.Types.ObjectId,
+        ref: 'Conversation',
+        required: true
+    },
     sender: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    recipient: {
+    receiver: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    text: {
+    message: {
         type: String,
         required: true
     },
-    status: {
-        type: String,
-        enum: ['read', 'unread'],
-        default: 'unread'
+    read: {
+        type: Boolean,
+        default: false
     },
     createdAt: {
         type: Date,
@@ -27,4 +31,4 @@ const messageSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Message', messageSchema);
+module.exports = mongoose.model('Chat', chatSchema);

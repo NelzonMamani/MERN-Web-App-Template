@@ -1,23 +1,23 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const storySchema = new Schema({
+const paymentSchema = new Schema({
     user: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    media: {
-        type: [mongoose.Types.ObjectId],
-        ref: 'Media',
+    amount: {
+        type: Number,
         required: true
     },
-    caption: {
+    currency: {
         type: String,
+        required: true
     },
-    views: {
-        type: Number,
-        default: 0
+    status: {
+        type: String,
+        required: true
     },
     createdAt: {
         type: Date,
@@ -25,4 +25,4 @@ const storySchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Story', storySchema);
+module.exports = mongoose.model('Payment', paymentSchema);

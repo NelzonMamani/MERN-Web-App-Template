@@ -1,23 +1,19 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const storySchema = new Schema({
+const draftSchema = new Schema({
     user: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    media: {
-        type: [mongoose.Types.ObjectId],
-        ref: 'Media',
+    title: {
+        type: String,
         required: true
     },
-    caption: {
+    content: {
         type: String,
-    },
-    views: {
-        type: Number,
-        default: 0
+        required: true
     },
     createdAt: {
         type: Date,
@@ -25,4 +21,4 @@ const storySchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Story', storySchema);
+module.exports = mongoose.model('Draft', draftSchema);

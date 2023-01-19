@@ -1,16 +1,18 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const likeSchema = new Schema({
-    user: {
-        type: mongoose.Types.ObjectId,
-        ref: 'User',
+const trendingSchema = new Schema({
+    topic: {
+        type: String,
         required: true
     },
     post: {
         type: mongoose.Types.ObjectId,
         ref: 'Post',
-        required: true
+    },
+    count: {
+        type: Number,
+        default: 0
     },
     createdAt: {
         type: Date,
@@ -18,4 +20,4 @@ const likeSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Like', likeSchema);
+module.exports = mongoose.model('Trending', trendingSchema);

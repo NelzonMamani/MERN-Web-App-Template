@@ -1,25 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const albumSchema = new Schema({
-    user: {
+const blockSchema = new Schema({
+    blocker: {
         type: mongoose.Types.ObjectId,
         ref: 'User',
         required: true
     },
-    name: {
-        type: String,
+    blocked: {
+        type: mongoose.Types.ObjectId,
+        ref: 'User',
         required: true
     },
-    images: [
-        {
-            type: String
-        }
-    ],
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model('Album', albumSchema);
+module.exports = mongoose.model('Block', blockSchema);
