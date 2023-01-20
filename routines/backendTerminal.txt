@@ -4,6 +4,18 @@ npm i --save-dev nodemon
 npm i jsonwebtoken 
 npm i @hapi/joi
 
+npm install supertest --save-dev
+npm i --save-dev supertest
+npm install --save-dev jest
+
+npm i bcrypt validator
+
+npx jest path/to/testfile.test.js
+npm test path/to/testfile.test.js
+
+netstat -an | findstr :9999
+
+
 "scripts": { "start": "node server.js",   "devStart": "nodemon server.js"  }
 npm run devStart 
 

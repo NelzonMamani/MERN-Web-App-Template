@@ -1,21 +1,63 @@
 const User = require("../models/User");
+const bcrypt = require('bcrypt');
+const validator = require('validator');
+const jwt = require('jsonwebtoken');
+
+
+
+
+//const User = require("../models/User");
 
 // exports an object containing all the user-related functions
 module.exports = {
-  // function to create a new user
-  async create(req, res) {
-    try {
-      // create a new user using the data from the request body
-      const user = new User(req.body);
-      // save the user to the database
-      await user.save();
-      // send a 201 Created status and the user data
-      res.status(201).json({ user });
-    } catch (error) {
-      // if there's an error, send a 500 Internal Server Error status and the error message
-      res.status(500).json({ msg: error.message });
+ // function to create a new user
+async create(req, res) {
+  try {
+    // validate the incoming user data
+    const { name, email, password } = req.body;
+
+    // check if the email is valid
+    if (!validator.isEmail(email)) {
+      return res.status(400).json({ msg: 'Invalid email' });
     }
-  },
+
+    // check if the name and password are provided
+    if (!name || !password) {
+      return res.status(400).json({ msg: 'Name and password are required' });
+    }
+
+    // check if the user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ msg: 'User already exists' });
+    }
+
+    // hash the password
+    const salt = await bcrypt.genSalt();
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    // create a new user
+    const user = new User({
+      name,
+      email,
+      password: hashedPassword,
+      roles: ['basic'], // assign a default role of 'basic'
+    });
+
+    // save the user to the database
+    await user.save();
+
+    // create a JSON web token for the user
+    const accessToken = jwt.sign({ userId: user._id }, process.env.ACCESS_TOKEN_SECRET, { expiresIn: '15m' });
+    const refreshToken = jwt.sign({ userId: user._id }, process.env.REFRESH_TOKEN_SECRET);
+
+    // send the access token and refresh token to the client
+    res.json({ accessToken, refreshToken });
+  } catch (error) {
+    // if there's an error, send a 500 Internal Server Error status and the error message
+    res.status(500).json({ msg: error.message });
+  }
+},
   // function to get all users
   async findAll(req, res) {
     try {

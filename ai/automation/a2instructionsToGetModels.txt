@@ -1,0 +1,30 @@
+Give me list of all possible models for a E-commerce web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Social Media web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Business Management web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Marketplaces web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Project Management web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Learning Platforms web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Job Portals web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a News and Media web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Travel and Tourism web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Health and Fitness web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Real Estate web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Content Management Systems web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Gaming web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Video Streaming web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Food delivery web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Chat and Communication web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Image and Video Sharing web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Booking and Reservations web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Communities web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Dating web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Classifieds and Directories web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Auctions web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Gambling web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Surveys web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Form Builders web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Mind Mapping web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Mindfulness and Mental Health web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Music and Audio Streaming web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Legal Services web application. We'll use the MERN aproach and start working on the backend 
+Give me list of all possible models for a Online Accounting and Finance. web application. We'll use the MERN aproach and start working on the backend 

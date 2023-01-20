@@ -7,7 +7,7 @@ const User = require('./models/User');
  
 const app = express();
 app.use(express.json()); 
-app.use('/users', authenticate, authorize('admin'), userRoutes);
+app.use('/users', userRoutes);
 
 
 // Connect to MongoDB Atlas
@@ -17,12 +17,17 @@ mongoose
   .then(() => {
     console.log("MongoDB Connected successfully");
 
-    // Start the Express server
-    const PORT = process.env.PORT || 4001;
-    app.listen(PORT, () => {
-      console.log(`Backend web server listening for request on port: ${PORT}`);
-    });
+    // // Start the Express server
+    // const PORT = process.env.PORT || 4500;
+    // app.listen(PORT, () => {
+    //   console.log(`Backend web server listening for request on port: ${PORT}`);
+    // });
   })
   .catch((error) => {
     console.log(error);
   });
+// Start the Express server
+const PORT = process.env.PORT || 4500;
+app.listen(PORT, () => {
+  console.log(`Backend web server listening for request on port: ${PORT}`);
+});

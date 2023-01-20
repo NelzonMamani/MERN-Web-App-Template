@@ -1,0 +1,3 @@
+Give me a list of all possible endpoints for a John model
+Give me a list of all possible endpoints for a Emily model
+Give me a list of all possible endpoints for a Jessica model
