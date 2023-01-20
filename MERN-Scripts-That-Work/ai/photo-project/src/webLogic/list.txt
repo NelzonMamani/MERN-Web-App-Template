@@ -1,0 +1,52 @@
+list of possible category names for photos:
+
+Landscapes
+Portraits
+Wildlife
+Street
+Architecture
+Nature
+Sports
+Concerts
+Abstract
+Food
+Travel
+People
+Cars
+Black and White
+Macro
+Night
+Action
+Fashion
+Underwater
+Animals
+Events
+Weddings
+Family
+Festivals
+Documentary
+Film
+Panoramic
+Water
+Kids
+Pets
+Graduation
+Vacation
+Christmas
+Easter
+Halloween
+Valentine's Day
+New Year
+Thanksgiving
+Christmas
+Easter
+Halloween
+Valentine's Day
+New Year
+Thanksgiving
+Christmas
+Easter
+Halloween
+Valentine's Day
+New Year
+Thanksgiving

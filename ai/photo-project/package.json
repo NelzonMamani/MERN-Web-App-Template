@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "inflection": "^2.0.1",
+    "natural": "^6.1.4"
+  }
+}

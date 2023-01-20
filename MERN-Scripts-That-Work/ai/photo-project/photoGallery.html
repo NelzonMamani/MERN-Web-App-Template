@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+    <style>
+        /* Style for the photo grid container */
+        .photo-grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+        
+        /* Style for each photo */
+        .photo {
+            width: 100%;
+        }
+        
+        /* Style for the full-size photo overlay */
+        .full-size-photo-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            visibility: hidden;
+        }
+        
+        /* Style for the full-size photo */
+        .full-size-photo {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    </style>
+</head>
+<body>
+    <div class="photo-grid-container">
+        <!-- Use JavaScript to dynamically add photos to the grid -->
+    </div>
+
+    <div class="full-size-photo-overlay">
+        <img class="full-size-photo" src="" alt="Full Size Photo">
+    </div>
+
+    <script>
+        // File names of photos in the "images" folder
+        const photoNames = ['photo1.jpg', 'photo2.jpg', 'photo3.jpg'];
+
+        // Create an array of file paths to the photos
+        const photos = photoNames.map(photoName => 'images/' + photoName);
+
+        // Get the photo grid container element
+        const photoGridContainer = document.querySelector(".photo-grid-container");
+
+        // Get the full-size photo overlay element
+        const fullSizePhotoOverlay = document.querySelector(".full-size-photo-overlay");
+
+        // Get the full-size photo element
+        const fullSizePhoto = document.querySelector(".full-size-photo");
+
+        // Add the photos to the photo grid
+        photos.forEach(photo => {
+            const img = document.createElement("img");
+            img.src = photo;
+            img.alt = 'My beautiful photo';
+            img.classList.add("photo");
+            img.addEventListener("click", e => {
+                fullSizePhoto.src = e.target.src;
+                fullSizePhotoOverlay.style.visibility = "visible";
+            });
+            photoGridContainer.appendChild(img);
+        });
+
+        // Handle full-size photo overlay click
+        fullSizePhotoOverlay.addEventListener("click", () => {
+            fullSizePhotoOverlay.style.visibility = "hidden";
+        });
+    </script>
+</body>
+</html>
