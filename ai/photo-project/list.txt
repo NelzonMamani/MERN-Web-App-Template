@@ -1,4 +1,43 @@
-list of possible category names for photos:
+some possible model names for the different sections of your website:
+Photo
+Album
+Category
+Tag
+Comment
+Like
+View
+Music
+Song
+Album
+Artist
+Playlist
+Comment
+Like
+View
+Programming
+Article
+Tutorial
+Resource
+CodeSnippet
+Comment
+Like
+View
+GoodNews
+Article
+Video
+Comment
+Like
+View
+Personal Website
+Post
+Comment
+Like
+View
+User
+Profile
+Role
+Download
+Payment
 Landscapes
 Portraits
 Wildlife
