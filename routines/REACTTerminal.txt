@@ -1,8 +1,13 @@
 "proxy": "http://localhost:4000",
 
  
+code . 
+new vscode enviroment with that directory
 
 npx create-react-app frontend
+npm install react-router-dom
+npm update react-router-dom
+
 npm i react-router-dom axios redux material-ui
 npm audit fix --force
 

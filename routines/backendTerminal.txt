@@ -10,6 +10,12 @@ npm install --save-dev jest
 
 npm i bcrypt validator
 
+
+
+npm update react-router react-router-dom
+npm cache clean --force
+
+
 npx jest path/to/testfile.test.js
 npm test path/to/testfile.test.js
 
