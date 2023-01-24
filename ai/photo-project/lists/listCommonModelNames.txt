@@ -1,0 +1,16 @@
+examples of common model names used in back-end programming:
+User
+Product
+Order
+Item
+Customer
+Employee
+Invoice
+Article
+Comment
+Category
+Tag
+Post
+Event
+Task
+Image

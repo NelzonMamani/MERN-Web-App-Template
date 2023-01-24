@@ -1,0 +1,28 @@
+allmost perfect, if you look what I it produces it is almost. make sure 
+
+
+can you modify it so that it gives me the look of: 
+
+tree c:\Users\Nelzon\MERN-Web-App-Template\ai\photo-project\dir  /F /A
+
+ 
+also at the top root of the tree print the name of the root folder
+
+
+.
+└── Edit me to generate
+    ├── a
+    │   └── nice
+    │       └── tree
+    │           ├── diagram!
+    │           └── :)
+    └── Use indentation
+        ├── to indicate
+        │   ├── file
+        │   ├── and
+        │   ├── folder
+        │   └── nesting.
+        └── You can even
+            └── use
+                ├── markdown
+                └── bullets!

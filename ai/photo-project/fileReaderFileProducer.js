@@ -209,23 +209,45 @@ function modelsHandlersFilesGenerator(fileName) {
 
 
 
-function routesHandlersFilesGenerator(fileName) {
-    fs.readFile(fileName, 'utf8', function(err, data) {
-        if (err) throw err;
-        var lines = data.split("\n");
-        lines.shift(); // remove first line
-        fs.mkdirSync(`${__dirname}/backend-web-app/routes`);
-        for (var i = 0; i < lines.length; i++) {
-            lines[i] = lines[i].trim().replace(/[^a-zA-Z0-9 ]/g, ""); // remove whitespaces and weird characters
-            lines[i] = inflection.singularize(lines[i]);
-            lines[i] = lines[i].replace(/\s+/g, "");
-            lines[i] = lines[i].charAt(0).toLowerCase() + lines[i].slice(1) + "Routes.js";
-            const filePath = path.join(__dirname, 'backend-web-app', 'routes', lines[i]);
-            fs.writeFileSync(filePath, '');
-        }
-        console.log("The files have been created!");
-    });
-}
+// function routesHandlersFilesGenerator(fileName) {
+//     fs.readFile(fileName, 'utf8', function(err, data) {
+//         if (err) throw err;
+//         var lines = data.split("\n");
+//         lines.shift(); // remove first line
+//         fs.mkdirSync(`${__dirname}/backend-web-app/routes`);
+//         for (var i = 0; i < lines.length; i++) {
+//             lines[i] = lines[i].trim().replace(/[^a-zA-Z0-9 ]/g, ""); // remove whitespaces and weird characters
+//             lines[i] = inflection.singularize(lines[i]);
+//             lines[i] = lines[i].replace(/\s+/g, "");
+//             lines[i] = lines[i].charAt(0).toLowerCase() + lines[i].slice(1) + "Routes.js";
+//             const filePath = path.join(__dirname, 'backend-web-app', 'routes', lines[i]);
+//             fs.writeFileSync(filePath, '');
+//         }
+//         console.log("The files have been created!");
+//     });
+// }
+
+// function routesHandlersFilesGenerator(fileName) {
+//   fs.readFile(fileName, 'utf8', function(err, data) {
+//       if (err) throw err;
+//       var lines = data.split("\n");
+//       lines.shift(); // remove first line
+//       fs.mkdirSync(`${__dirname}/backend-web-app/routes`);
+//       for (var i = 0; i < lines.length; i++) {
+//           lines[i] = lines[i].trim().replace(/[^a-zA-Z0-9 ]/g, ""); // remove whitespaces and weird characters
+//           lines[i] = inflection.singularize(lines[i]);
+//           lines[i] = lines[i].replace(/\s+/g, "");
+//           lines[i] = lines[i].charAt(0).toLowerCase() + lines[i].slice(1) + "Routes.js";
+//           const filePath = path.join(__dirname, 'backend-web-app', 'routes', lines[i]);
+//           fs.writeFileSync(filePath, '');
+//           // call the modelRoutesCRUDMaker function and pass the current line as an argument
+//           modelRoutesCRUDMaker(lines[i]);
+//       }
+//       console.log("The files have been created!");
+//   });
+// }
+
+
 
 
 function controllersHandlerFilesGenerator(fileName) {
@@ -246,6 +268,70 @@ function controllersHandlerFilesGenerator(fileName) {
     });
 }
  
+// function routesHandlersFilesGenerator(fileName) {
+//   fs.readFile(fileName, 'utf8', function(err, data) {
+//       if (err) throw err;
+//       var lines = data.split("\n");
+//       lines.shift(); // remove first line
+//       fs.mkdirSync(`${__dirname}/backend-web-app/routes`);
+//       for (var i = 0; i < lines.length; i++) {
+//           lines[i] = lines[i].trim().replace(/[^a-zA-Z0-9 ]/g, ""); // remove whitespaces and weird characters
+//           lines[i] = inflection.singularize(lines[i]);
+//           lines[i] = lines[i].replace(/\s+/g, "");
+//           lines[i] = lines[i].charAt(0).toLowerCase() + lines[i].slice(1) + "Routes.js";
+//           const filePath = path.join(__dirname, 'backend-web-app', 'routes', lines[i]);
+//           fs.writeFileSync(filePath, '');
+//           // call the modelRoutesCRUDMaker function and pass the current line as an argument
+//           modelRoutesCRUDMaker(lines[i]);
+//       }
+//       console.log("The files have been created!");
+//   });
+// }
+
+function routesHandlersFilesGenerator(webAppName, listTxt) {
+  fs.readFile(listTxt, 'utf8', function(err, data) {
+      if (err) throw err;
+      var lines = data.split("\n");
+      lines.shift(); // remove first line
+      fs.mkdirSync(`${__dirname}/${webAppName}/routes`);
+      for (var i = 0; i < lines.length; i++) {
+          lines[i] = lines[i].trim().replace(/[^a-zA-Z0-9 ]/g, ""); // remove whitespaces and weird characters
+          lines[i] = inflection.singularize(lines[i]);
+          lines[i] = lines[i].replace(/\s+/g, "");
+          lines[i] = lines[i].charAt(0).toLowerCase() + lines[i].slice(1);
+          const filePath = path.join(__dirname, webAppName, 'routes', lines[i] + 'Routes.js');
+          fs.writeFileSync(filePath, modelRoutesCRUDMaker(lines[i]));
+      }
+      console.log("The files have been created!");
+  });
+}
+
+function modelRoutesCRUDMaker(modelName) {
+    // Create the router object
+    const router = express.Router();
+
+    // Create the controller for the specified model
+    const modelController = require(`../controllers/${modelName}Controller`);
+
+    // Create route for creating a new model
+    router.post(`/${modelName}`, modelController.create);
+
+    // Create route for getting all models
+    router.get(`/${modelName}`, modelController.findAll);
+
+    // Create route for getting a model by id
+    router.get(`/${modelName}/:id`, modelController.findById);
+
+    // Create route for updating a model by id
+    router.patch(`/${modelName}/:id`, modelController.update);
+
+    // Create route for deleting a model by id
+    router.delete(`/${modelName}/:id`, modelController.delete);
+
+    // Write the router to a file
+    fs.writeFileSync(`${modelName}Routes.js`, `module.exports = ${router}`);
+}
+
 
 toModelName("list.txt");
 ToUpperCamelCase("list.txt");

@@ -1,0 +1,23 @@
+list of models for a social media app
+User
+Post
+Comment
+Like/Dislike
+Friend/Follow
+Message
+Notification
+Group/Community
+Event
+Hashtag
+Location
+Photo/Video
+Album
+Search
+Profile
+Story
+Advertisment
+Analytics
+Privacy Settings
+Report/Flag
+Poll
+Live Stream.

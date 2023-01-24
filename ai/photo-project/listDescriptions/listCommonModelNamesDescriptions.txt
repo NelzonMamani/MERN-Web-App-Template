@@ -1,0 +1,34 @@
+examples of common model names used in back-end programming:
+User
+Product
+Order
+Item
+Customer
+Employee
+Invoice
+Article
+Comment
+Category
+Tag
+Post
+Event
+Task
+Image
+
+
+
+User - A model that represents a user of the system, typically containing information such as a username, email address, password, and other profile information.
+Product - A model that represents a product offered by a company, typically containing information such as a name, description, price, and image.
+Order - A model that represents an order placed by a customer, typically containing information such as the customer's information, the products ordered, and the total cost of the order.
+Item - A model that represents an item in an inventory, typically containing information such as a name, description, quantity, and price.
+Customer - A model that represents a customer, typically containing information such as contact information, purchase history, and any notes about the customer.
+Employee - A model that represents an employee of a company, typically containing information such as name, position, salary, and contact information.
+Invoice - A model that represents an invoice for a purchase, typically containing information such as the customer's information, a list of items purchased, and the total cost.
+Article - A model that represents an article, typically containing information such as a title, body, author, and any associated images or videos.
+Comment - A model that represents a comment on an article or other piece of content, typically containing information such as the comment text, the user who made the comment, and the date it was made.
+Category - A model that represents a category or grouping of items, such as products or articles, typically containing information such as the category name and a list of items that belong to that category.
+Tag - A model that represents a keyword or label associated with an item, such as a product or article, typically containing information such as the tag name and a list of items that have that tag.
+Post - A model that represents a post on a blog or social media platform, typically containing information such as the post text, the user who made the post, and the date it was made.
+Event - A model that represents an event, such as a concert or meeting, typically containing information such as the event name, location, date and time, and any associated notes or details.
+Task - A model that represents a task or to-do item, typically containing information such as the task description, the user responsible for completing it, and the due date.
+Image - A model that represents an image, typically containing information such as the image file, caption and metadata.

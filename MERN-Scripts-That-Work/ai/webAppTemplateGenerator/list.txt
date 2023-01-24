@@ -1,0 +1,90 @@
+some possible model names for the different sections of your website:
+Photo
+Album
+Category
+Tag
+Comment
+Like
+View
+Music
+Song
+Album
+Artist
+Playlist
+Comment
+Like
+View
+Programming
+Article
+Tutorial
+Resource
+CodeSnippet
+Comment
+Like
+View
+GoodNews
+Article
+Video
+Comment
+Like
+View
+Personal Website
+Post
+Comment
+Like
+View
+User
+Profile
+Role
+Download
+Payment
+Landscapes
+Portraits
+Wildlife
+Street
+Architecture
+Nature
+Sports
+Concerts
+Abstract
+Food
+Travel
+People
+Cars
+Black and White
+Macro
+Night
+Action
+Fashion
+Underwater
+Animals
+Events
+Weddings
+Family
+Festivals
+Documentary
+Film
+Panoramic
+Water
+Kids
+Pets
+Graduation
+Vacation
+Christmas
+Easter
+Halloween
+Valentine's Day
+New Year
+Thanksgiving
+Christmas
+Easter
+Halloween
+Valentine's Day
+New Year
+Thanksgiving
+Christmas
+Easter
+Halloween
+Valentine's Day
+New Year
+Thanksgiving
