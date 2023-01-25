@@ -1,15 +1,27 @@
 ### 
-GET http://localhost:4000/users
+GET http://localhost:4001/users
+Content-Type: application/json
+Authorization: Bearer myAccessTokenSecret
 
 
+###
+POST http://localhost:4001/register
+Content-Type: application/json
 
+{
+"name": "Nelzon2",
+"email": "nelzonm7@gmail.com",
+"password": "password",
+"role": "admin",
+"status": "active"
+}
 ###
 POST http://localhost:4000/users
 Content-Type: application/json
 
 {
     "name": "Nelzon2",
-    "email": "nelzonm3@gmail.com",
+    "email": "nelzonm5@gmail.com",
     "password": "password",
     "role": "admin",
     "status": "active"
