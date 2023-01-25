@@ -1,3 +1,11 @@
+// it also works
+// it also works
+// it also works
+// it also works
+// it also works
+// it also works
+// it also works
+
 const User = require('../models/User');
 
 // Function to validate user data before creating a new user

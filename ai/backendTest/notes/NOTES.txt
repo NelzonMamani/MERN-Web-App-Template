@@ -82,3 +82,11 @@ REFRESH_TOKEN_SECRET: A secret key that is used to sign the refresh tokens.
 JWT_EXPIRE: The amount of time (in seconds) that the access token is valid for.
 JWT_REFRESH_EXPIRE: The amount of time (in seconds) that the refresh token is valid for.
 
+.env file now:
+
+
+
+
+
+
+

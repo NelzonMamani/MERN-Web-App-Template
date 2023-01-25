@@ -8,8 +8,7 @@ Comprehensive Backend Development and Security Checklist for MERN Web Applicatio
 2. How does the User model interact with MongoDB in the application?
 
 
-3. Can you describe the role of the userRoutes, userControllers, and auth files in the CRUD operations and authentication/authorization processes?
-
+3. Can you describe the role of the userRoutes, userControllers, validation and auth files in the CRUD operations and authentication/authorization processes?
 
 4. How are environment variables such as PORT, MONGO_URI, and access/refresh token secrets utilized in the application?
 
