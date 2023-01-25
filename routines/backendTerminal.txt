@@ -1,10 +1,17 @@
 npm init -y
-npm i express dotenv mongoose 
+npm i express dotenv mongoose body-parser
+
 npm i --save-dev nodemon
+    "devStart": "nodemon server.js",
+    "authStart": "nodemon authServer.js"
+
 npm i jsonwebtoken 
+npm install supertest --save-dev
+npm i jest@29.4.0
+
 npm i @hapi/joi
 
-npm install supertest --save-dev
+
 npm i --save-dev supertest
 npm install --save-dev jest
 

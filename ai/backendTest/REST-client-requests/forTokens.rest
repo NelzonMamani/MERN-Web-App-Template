@@ -1,0 +1,85 @@
+
+POST http://localhost:4000/auth/register
+Content-Type: application/json
+
+{   
+    "name": "PremiumUserXYZ 101",
+    "email": "PremiumUserXYZ@example.com",
+    "password": "test2password",
+    "role": "premium",
+    "status": "active"
+}
+
+### 
+GET http://localhost:4000/users
+
+
+###
+POST http://localhost:4000/users/register
+Content-Type: application/json
+
+{
+    "name": "Isaac Newton",
+    "email": "isaac@newton.com",
+    "password": "IsaacNewton",
+    "role": "premium"
+}
+
+
+###
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{         
+ 
+    "email": "isaac@newton.com",
+    "password": "IsaacNewton"
+ 
+}
+
+
+###
+
+GET http://localhost:4000/admin
+Authorization: Bearer [token]
+
+ 
+###
+GET http://localhost:4000/users HTTP/1.1
+
+###
+GET http://localhost:4000/users?page=1&limit=10
+
+###
+GET http://localhost:4000/users/63c48f9668456ce59a036c67 HTTP/1.1
+
+
+###
+PATCH http://localhost:4000/users/63c48f9668456ce59a036c67 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Nelzon Raul"
+}
+
+###
+DELETE http://localhost:4000/users/63c4a6be7eb9a992a4b40456
+ 
+ 
+###
+GET http://localhost:4000/users?role=premium
+
+###
+GET http://localhost:4000/users?role=admin&page=1&limit=10
+
+###
+
+GET http://localhost:4000/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRkMzZhM2FiZWZmZjI4OTYwYTI1MCIsImVtYWlsIjoicHJlbWl1bXVzZXJ4eXpAZXhhbXBsZS5jb20iLCJpYXQiOjE2NzM4NDM1NjIsImV4cCI6MTY3Mzg0NzE2Mn0.ApRYGi5EbXvUmEiGrvzW9ou1C6TO2xwshU6Qzh6ofHk
+
+
+###
+POST http://localhost:4000/users/logoutAll
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYzRkMzZhM2FiZWZmZjI4OTYwYTI1MCIsImVtYWlsIjoicHJlbWl1bXVzZXJ4eXpAZXhhbXBsZS5jb20iLCJpYXQiOjE2NzM4NDM1NjIsImV4cCI6MTY3Mzg0NzE2Mn0.ApRYGi5EbXvUmEiGrvzW9ou1C6TO2xwshU6Qzh6ofHk

@@ -1,0 +1,80 @@
+
+
+User.js
+
+userRoutes.js
+userController.js
+
+userRoutes.test.js
+authRoutes.test.js
+
+aut
+server.js
+
+authRoutes.js
+
+
+
+ 
+
+I have modified and corrected the names of the files.  Each model has its corresponding file in routes, controllers and tests 
+
+backend web app tree structure 
+
+
+backend
+├── models
+│   ├── Post.js
+│   ├── User.js
+│   ├── Comment.js
+│   └── ...
+├── routes
+│   ├── postRoutes.js
+│   ├── userRoutes.js
+│   ├── commentRoutes.js
+│   └── ...
+├── controllers
+│   ├── postController.js
+│   ├── userController.js
+│   ├── commentController.js
+│   └── ...
+├── middlewares
+│   ├── auth.js
+│   ├── validation.js
+│   └── ...
+├── tests
+│   ├── postRoutes.test.js
+│   ├── userRoutes.test.js
+│   ├── commentRoutes.test.js
+│   └── ...
+├── .env
+├── server.js
+├── authServer.js
+└── package.json
+
+
+
+Yes, that's a good way to organize the functions. You could place the validation-related functions in a validation.js file, and the authentication and authorization-related functions in an auth.js file.
+
+ validateUserData() function would be responsible for checking that the data provided by the client when creating a new user is valid, such as the email address is in the correct format and the password meets certain security criteria.
+
+ validatePost() function would be responsible for checking that the data provided by the client when creating a new post is valid, such as the post's title and body are not empty and are within acceptable bounds.
+
+ validateComment() function would be responsible for checking that the data provided by the client when creating a new comment is valid, such as the comment's body is not empty and is within acceptable bounds.
+
+ verifyToken() function would be responsible for checking that the token provided by the client is valid and has not expired.
+
+
+authenticateUser() function would be responsible for verifying the user's credentials, such as their username and password, and determining if the user is who they claim to be. Once a user is authenticated, a token is issued to them.
+
+authorizeUser() function would be responsible for checking if an authenticated user has the necessary permissions to access a particular endpoint or perform a specific action. It verifies if the user has the necessary roles or permissions to access the endpoint or perform the action.
+
+
+PORT: The port number that the server will listen on.
+AUTH_SERVER_PORT variable, which specifies the port number that the authServer.js file will listen on.
+MONGO_URI: The connection string for the MongoDB database that the application will use.
+ACCESS_TOKEN_SECRET: A secret key that is used to sign the access tokens.
+REFRESH_TOKEN_SECRET: A secret key that is used to sign the refresh tokens.
+JWT_EXPIRE: The amount of time (in seconds) that the access token is valid for.
+JWT_REFRESH_EXPIRE: The amount of time (in seconds) that the refresh token is valid for.
+
