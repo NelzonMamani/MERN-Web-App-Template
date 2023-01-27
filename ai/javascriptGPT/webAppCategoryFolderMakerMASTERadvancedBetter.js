@@ -29,6 +29,8 @@ function cleanCategoryNames(folderName, fileName) {
     let subdirectory = path.join(folderName, cleanedLine);
     fs.mkdirSync(subdirectory);
 
+    //create README.txt file
+    createReadMe(subdirectory);
 
     //4. create a subdirectory folder called backend
     const backendfolder = path.join(subdirectory, 'backend');
@@ -52,8 +54,16 @@ function cleanCategoryNames(folderName, fileName) {
   }
 }
 
+//create README.txt file function
+function createReadMe(subdirectory) {
+  let readMeContent = "Under construction";
+  // Write the README.txt file
+  fs.writeFileSync(path.join(subdirectory, "README.txt"), readMeContent);
+  console.log("README.txt file created successfully");
+}
+
 //create .env file function
-function createDotEnv(subdirectory) {
+function createDotEnv(backendSubDir) {
   let envContent = `PORT=4000
 AUTH_SERVER_PORT=4001
 LOCAL_MONGO_URI=mongodb://localhost:27017/myapp
@@ -63,20 +73,20 @@ REFRESH_TOKEN_SECRET=myRefreshTokenSecret
 JWT_EXPIRE=3600
 JWT_REFRESH_EXPIRE=86400`;
   // Write the .env file
-  fs.writeFileSync(path.join(subdirectory, ".env"), envContent);
+  fs.writeFileSync(path.join(backendSubDir, ".env"), envContent);
   console.log(".env file created successfully");
 }
 
 //create .gitignore file function
-function createDotIgnore(subdirectory) {
+function createDotIgnore(backendSubDir) {
   let gitignoreContent = "node_modules";
   // Write the .gitignore file
-  fs.writeFileSync(path.join(subdirectory, ".gitignore"), gitignoreContent);
+  fs.writeFileSync(path.join(backendSubDir, ".gitignore"), gitignoreContent);
   console.log(".gitignore file created successfully");
 }
 
 //create server.js file function
-function createServer(subdirectory) {
+function createServer(backendSubDir) {
   let serverContent = `const express = require("express");
 const mongoose = require("mongoose");
 //const { authenticate } = require("./middlewares/auth");
@@ -110,11 +120,11 @@ app.listen(PORT, () => {
 
 `;
   // Write the server.js file
-  fs.writeFileSync(path.join(subdirectory, "server.js"), serverContent);
+  fs.writeFileSync(path.join(backendSubDir, "server.js"), serverContent);
   console.log("server.js file created successfully");
 }
 
-function createAuthServer(folderName) {
+function createAuthServer(backendSubDir) {
   let authServerContent = `const express = require("express");
 const mongoose = require("mongoose");
 //const { authenticate } = require("./middlewares/auth");
@@ -200,12 +210,12 @@ console.log(\`Auth server started on port \${process.env.AUTH_SERVER_PORT}\`);
   `;
 
   // Write the authServer.js file
-  fs.writeFileSync(path.join(folderName, "authServer.js"), authServerContent);
+  fs.writeFileSync(path.join(backendSubDir, "authServer.js"), authServerContent);
   console.log("authServer.js file created successfully");
 }
 
 // Example usage:
-const folderName = "web-app-projects2";
+const folderName = "web-app-projects";
 const fileName = "webAppCategories.txt";
 cleanCategoryNames(folderName, fileName);
 
