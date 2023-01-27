@@ -1,0 +1,17 @@
+"proxy": "http://localhost:4000",
+
+ 
+
+npx create-react-app frontend
+npm i react-router-dom axios redux material-ui
+npm audit fix --force
+
+
+------------------
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+
+npm audit fix --force

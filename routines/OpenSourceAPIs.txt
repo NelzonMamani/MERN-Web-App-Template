@@ -1,0 +1,19 @@
+Open Source APIs for Fetching 
+
+OpenWeatherMap: A free, open source API for weather data
+https://openweathermap.org/api
+https://newsapi.org/docs/client-libraries/node-js 
+
+NewsAPI: An open source API for fetching news articles
+https://newsapi.org/
+
+CoinMarketCap: An open source API for cryptocurrency data
+https://coinmarketcap.com/api/
+
+The Cat API: An open source API for fetching cat images
+https://thecatapi.com/
+
+Rest Countries: An open source API for fetching country information
+
+PokéAPI: An open source API for fetching Pokémon data
+https://pokeapi.co/

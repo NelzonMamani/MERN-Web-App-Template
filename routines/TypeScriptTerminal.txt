@@ -1,0 +1,9 @@
+https://www.typescriptlang.org/
+https://www.w3schools.com/typescript/typescript_getstarted.php
+
+npm install typescript -g
+npm install typescript --save-dev
+npx tsc
+npx tsc --init
+
+

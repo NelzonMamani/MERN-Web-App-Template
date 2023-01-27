@@ -1,0 +1,51 @@
+// Creating A Map
+const emptyMap = new Map()
+const map = new Map([
+  ['key', 'value']
+])
+
+
+// Setting Values 
+const map = new Map()
+map.set('key', 'value')
+map.set(true, 'boolean')
+// "key" => "value"
+// true => "boolean"
+
+
+// Getting Values
+const map = new Map()
+map.set('key', 'value')
+map.set(true, 'boolean')
+map.get('key') // "value"
+map.get(true) // "boolean"
+map.get('wrong-key') // undefined
+
+
+// Checking For Values
+const map = new Map()
+map.set(1, 'number')
+map.has(1) // true
+map.has('1') // false
+map.has('wrong-key') // false
+
+
+// Removing Values 
+const map = new Map()
+map.set(1, 'number')
+map.set('a', 'b')
+map.delete(1)
+map.has(1) // false
+
+// Iterating Over A Map
+const map = new Map()
+map.set(1, 'number')
+map.set('a', 'b')
+map.forEach((value, key) => {
+  console.log(`${key} => ${value}`)
+})
+// 1 => number
+// a => b
+
+
+https://www.youtube.com/watch?v=yJDofSGTSPQ&ab_channel=WebDevSimplified

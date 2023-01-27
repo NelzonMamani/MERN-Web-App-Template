@@ -1,0 +1,9 @@
+Prettier Shortcut Keys
+ 
+
+Ctrl + Shift + P: Format the current document using Prettier
+Ctrl + Alt + F: Format the selected code using Prettier
+
+
+Alt + Shift + F: Format the entire file using Prettier
+Ctrl + Alt + L: Format the entire project using Prettier

@@ -1,0 +1,178 @@
+Build Real Time Face Detection With JavaScript
+https://www.youtube.com/watch?v=CVClHLwv-4I&list=PLZlA0Gpn_vH8DWL14Wud_m8NeNNbYKOkj&ab_channel=WebDevSimplified
+
+******************** WORKING ON IT (START) ********************
+The Net Ninja UDEMY TUTOR
+MERN Stack Tutorial #1 - What is the MERN Stack?
+https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&ab_channel=TheNetNinja
+https://github.com/iamshaunjp/MERN-Stack-Tutorial
+
+MERN Authentication Tutorial #1 - Intro & Starter Project
+https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&ab_channel=TheNetNinja
+
+
+Material UI Tutorial #1 - Intro & Setup
+https://www.youtube.com/watch?v=0KEpWHtG10M&list=PL4cUxeGkcC9gjxLvV4VEkZ6H6H4yWuS58&ab_channel=TheNetNinja
+
+********************* WORKING ON IT (END) *********************
+****************** FINISHED TUTORIALS (START) ******************
+React router
+https://www.w3schools.com/REACT/react_router.asp
+
+Another 5 Must Know JavaScript Features That Almost Nobody Knows
+https://www.youtube.com/watch?v=yJDofSGTSPQ&ab_channel=WebDevSimplified
+
+****************** FINISHED TUTORIALS (END) ********************
+
+
+React Axios API Requests | Axios with React JS Tutorial
+https://www.youtube.com/watch?v=ZEKBDXGnD4s&ab_channel=DaveGray
+https://github.com/gitdagray/react_axios_requests
+
+
+useContext
+https://reactjs.org/docs/hooks-reference.html#usecontext
+
+freeCodeCamp.org
+React State Management – Intermediate JavaScript Course
+https://youtu.be/-bEzt5ISACA
+https://github.com/jherr/fcc-state
+
+
+React & TypeScript - Course for Beginners
+https://youtu.be/FJDVKeh7RJI
+https://github.com/piyush-eon/react-typescript-taskify
+
+
+
+MERN Authentication Tutorial #1 - Intro & Starter Project
+https://www.youtube.com/watch?v=WsRBmwNkv3Q&list=PL4cUxeGkcC9g8OhpOZxNdhXggFz2lOuCT&ab_channel=TheNetNinja
+
+React Router in Depth #1 - Introduction
+https://www.youtube.com/watch?v=OMQ2QARHPo0&list=PL4cUxeGkcC9iVKmtNuCeIswnQ97in2GGf&ab_channel=TheNetNinja
+
+Weather App Build (Vue 3 & Tailwind) #1 - Introduction
+https://www.youtube.com/watch?v=gUsBaB5ViAo&list=PL4cUxeGkcC9hfoy8vFQ5tbXO3vY0xhhUZ&ab_channel=TheNetNinja
+
+React Hooks Tutorial - 12 - Fetching data with useEffect Part 1
+https://youtu.be/bYFYF2GnMy8
+
+
+Fetch API Introduction
+https://youtu.be/Oive66jrwBs
+
+Build Node.js User Authentication - Password Login
+https://youtu.be/Ud5xKCYQTjM
+https://github.com/WebDevSimplified/Nodejs-User-Authentication
+
+Learn The MERN Stack - Express & MongoDB Rest API
+https://youtu.be/-0exw-9YJBo
+https://github.com/bradtraversy/mern-tutorial
+
+
+
+WebDevSimplified
+Learn Fetch API In 6 Minutes
+https://youtu.be/cuEtnrL9-H0
+
+
+to learn
+https://reactrouter.com/en/main/components/outlet
+https://github.com/remix-run/react-router/tree/dev/examples
+
+
+
+
+useContext
+https://www.geeksforgeeks.org/reactjs-usecontext-hook/ 
+
+
+
+Course of TypeScript
+Typescript for Beginners - Starter Lesson
+https://youtu.be/MOO5vrtTUTE
+https://github.com/gitdagray/typescript-course 
+
+
+How To Easily Format Dates In JavaScript
+https://www.youtube.com/watch?v=jZUHZDXmQ_A&ab_channel=WebDevSimplified
+
+list
+Intro to TypeScript
+https://youtu.be/2ArU2F92rds
+
+
+https://www.youtube.com/watch?v=cchqeWY0Nak&ab_channel=CodingGarden
+Setting up vite, React, TypeScript, eslint, vitest, testing-library and react-router
+
+
+Typescript Project from Scratch | Complete Tutorial for Beginners
+https://www.youtube.com/watch?v=61v23Ce5SXA&ab_channel=DaveGray
+
+
+
+
+
+Build and Deploy a Modern Full Stack ECommerce React Application with Stripe
+https://www.youtube.com/watch?v=4mOkFXyxfsU&t=135s&ab_channel=JavaScriptMastery
+
+Build and Deploy a React Admin Dashboard App With Theming, Tables, Charts, Calendar, Kanban and More
+https://www.youtube.com/watch?v=jx5hdo50a2M&ab_channel=JavaScriptMastery
+
+
+
+Build and Deploy a Full Stack TikTok Clone Application and Master TypeScript | Full Course (Part 1)
+https://www.youtube.com/watch?v=CcBHZ0t2Qwc&ab_channel=JavaScriptMastery
+https://github.com/adrianhajdin/project_tiktik 
+
+Build Modern Portfolio with NextJS, TypeScript, SSR, and React Bricks CMS
+https://www.youtube.com/watch?v=Ym6RYyRBPaA&ab_channel=CleverProgrammer
+
+list
+Full Stack MERN Project - Build and Deploy an App | React + Redux, Node, Express, MongoDB [Part 1/2]
+https://youtu.be/ngc9gnGgUdA
+ 
+list 
+Modern React Web Development Full Course - 12 Hours | 4 Real Industry Web Applications
+https://youtu.be/XxXyfkrP298
+
+
+List
+Build a FULLSTACK React Ecommerce App that is fully Responsive with Stripe Payment
+https://youtu.be/EBCdyQ_HFMo
+
+
+
+
+Zod Makes TypeScript Even Better
+https://www.youtube.com/watch?v=9UVPk0Ulm6U&ab_channel=WebDevSimplified
+
+form validation
+Learn Zod In 30 Minutes
+https://youtu.be/L6BE-U3oy80
+
+Full Stack Projects
+https://www.youtube.com/playlist?list=PLChiukrA-RMOEB1PRQqB1NITIRsDz9pIN
+
+E-Commerce tutorial with Next.js, React, Tailwind, MongoDB and Stripe
+https://www.youtube.com/watch?v=hlh1zR2Wjvs&list=PLChiukrA-RMOEB1PRQqB1NITIRsDz9pIN&index=2&ab_channel=CodingWithDawid
+https://github.com/dejwid/nextjs-ecommerce
+
+course Dave Gray
+Typescript for Beginners - Starter Lesson
+https://www.youtube.com/watch?v=MOO5vrtTUTE&list=PL0Zuz27SZ-6NS8GXt5nPrcYpust89zq_b&ab_channel=DaveGray
+
+=================>>>> YEAR 2023 <<<<=================
+
+
+Build a Fullstack Blog App using MERN (mongo, express, react, node)
+https://youtu.be/xKs2IZZya7c
+https://github.com/dejwid/mern-blog
+
+Build & Deploy TypeScript MERN ECommerce Website Like Amazon
+https://www.youtube.com/watch?v=Lo_HgTT0D68&ab_channel=CodingwithBasir
+
+Realtime Chat App - React, Node.js and Socket.io
+https://www.youtube.com/playlist?list=PL63c_Ws9ecIRZ6njHRi3cuCkNSfzqyLBn
+
+
