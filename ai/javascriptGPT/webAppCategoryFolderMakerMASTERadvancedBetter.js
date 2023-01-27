@@ -205,7 +205,7 @@ console.log(\`Auth server started on port \${process.env.AUTH_SERVER_PORT}\`);
 }
 
 // Example usage:
-const folderName = "web-app-projects";
+const folderName = "web-app-projects2";
 const fileName = "webAppCategories.txt";
 cleanCategoryNames(folderName, fileName);
 

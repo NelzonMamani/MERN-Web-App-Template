@@ -1,1 +1,0 @@
-// Basic auth server template
