@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Donation Form</title>
+</head>
+<body>
+  <form id="donation-form" method="post" action="https://www.sandbox.paypal.com/cgi-bin/webscr">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="youremail@yourbusiness.com">
+    <input type="hidden" name="item_name" value="Donation">
+    <input type="hidden" name="currency_code" value="USD">
+    <label>Donation Amount:</label>
+    <input type="text" name="amount" id="amount" required>
+    <br><br>
+    <label>Donor's Name:</label>
+    <input type="text" name="first_name" id="first_name" required>
+    <br><br>
+    <label>Donor's Email:</label>
+    <input type="email" name="email" id="email" required>
+    <br><br>
+    <input type="submit" value="Donate">
+  </form>
+  <script>
+    //You can add your own JavaScript code here to handle form validation, or you can use a JavaScript library such as jQuery Validation
+  </script>
+</body>
+</html>

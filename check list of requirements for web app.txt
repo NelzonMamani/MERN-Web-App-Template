@@ -1,0 +1,15 @@
+check list of requirements 
+1. Identify the main pages or sections of the website (e.g. homepage, about page, contact page, user dashboard, etc.).
+
+2. Determine the specific features or functionality of each page or section (e.g. login system, search bar, shopping cart, etc.).
+
+3. Understand the data and content that will be displayed on each page or section (e.g. products, blog posts, user information, etc.).
+
+4. Identify any external systems or APIs that the website will need to interact with (e.g. payment gateway, social media login, etc.).
+5. Determine any specific regulations or compliance requirements that the website must adhere to (e.g. GDPR, HIPAA, etc.).
+6. Understand the target audience and user personas for the website.
+7. Identify any performance or scalability requirements for the website.
+8. Determine any specific design or branding guidelines for the website.
+9. Identify any specific security or privacy requirements for the website.
+10. Understand any future plans for expanding the website's features or functionality.
+

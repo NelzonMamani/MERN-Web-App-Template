@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Donation Confirmation</title>
+  </head>
+  <body>
+    <h1>Donation Confirmation</h1>
+    <form action="/donationConfirmation" method="post">
+      <input type="hidden" name="donationId" value="{{donationId}}">
+      <input type="hidden" name="payerId" value="{{payerId}}">
+      <button type="submit">Confirm Payment</button>
+    </form>
+  </body>
+</html>

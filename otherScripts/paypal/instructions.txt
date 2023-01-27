@@ -1,0 +1,10 @@
+
+The number of pages necessary to handle the donation process can vary depending on the specific requirements of the organization or website. However, some common pages that are typically included in a donation process include:
+
+1. A donation form page (donation.html): This page allows the user to enter their donation information, such as the amount they want to donate and their personal information.
+2. A payment processing page (payment.html): This page handles the processing of the donation payment, typically through a payment gateway like PayPal.
+3. A confirmation page (thankYou.html): This page confirms that the donation was successful and thanks the user for their contribution.
+4. A failure page (notAbleToDonate.html): This page is shown when the donation process fails, such as when there is an error with the payment gateway or when the user cancels the donation.
+5. A receipt page (receipt.html): This page displays a detailed receipt of the donation, including the donation amount, date, and other relevant information.
+6. A cancel page (cancel.html) : This page is shown when the user cancels the donation process.
+7. A contact page( contact.html) : This page is shown when the user needs to contact the organization for any questions or concerns.

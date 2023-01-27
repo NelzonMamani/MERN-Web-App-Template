@@ -1,0 +1,34 @@
+list of possible models for a social media web app built with the MERN stack:
+User
+Post
+Comment
+Like
+Friendship
+Message
+Group
+Event
+Notification
+Profile
+Media
+Hashtag
+Report
+Blocking
+Search
+Analytics
+Advertisement
+Setting
+Verification
+Privacy
+Role
+Permission
+Token
+Session
+Invitation
+Followers
+Following
+Hidden Posts
+Saved Posts
+Draft
+Poll
+Live
+Story

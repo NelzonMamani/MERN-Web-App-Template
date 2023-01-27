@@ -1,0 +1,70 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.13  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Nelzon Mamani">
+	<META NAME="CREATED" CONTENT="20230125;23341900">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 0; orphans: 0 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-GB }
+		P.cjk { font-family: "SimSun"; font-size: 12pt; so-language: zh-CN }
+		P.ctl { font-family: "Arial", sans-serif; font-size: 12pt; so-language: hi-IN }
+		PRE { direction: ltr; color: #000000; widows: 0; orphans: 0 }
+		PRE.western { so-language: en-GB }
+		PRE.cjk { font-family: "NSimSun", monospace; so-language: zh-CN }
+		PRE.ctl { so-language: hi-IN }
+		CODE.cjk { font-family: "NSimSun", monospace }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" TEXT="#000000" DIR="LTR">
+<P CLASS="western" ALIGN=LEFT><FONT FACE="Arial, sans-serif"><FONT SIZE=3 STYLE="font-size: 13pt">an
+example of a JavaScript function called <CODE CLASS="western">cleanCategoryNames</CODE>
+that takes a <CODE CLASS="western">folderName</CODE> and a <CODE CLASS="western">fileName</CODE>
+as inputs, creates a folder with the <CODE CLASS="western">folderName</CODE>
+argument, reads the contents of the <CODE CLASS="western">fileName</CODE>,
+applies snake_case naming convention, removes any whitespace and
+non-alphanumeric characters, replaces the remaining whitespace with
+underscores, and creates a folder with each cleaned line inside the
+folder:</FONT></FONT></P>
+<PRE CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Copy code
+<CODE CLASS="western">const fs = require('fs');</CODE>
+<CODE CLASS="western">const path = require('path');</CODE>
+
+<CODE CLASS="western">function cleanCategoryNames(folderName, fileName) {</CODE>
+<CODE CLASS="western">  </CODE><CODE CLASS="western">// Create the main folder</CODE>
+<CODE CLASS="western">  </CODE><CODE CLASS="western">fs.mkdirSync(folderName);</CODE>
+
+<CODE CLASS="western">  </CODE><CODE CLASS="western">// Read the contents of the file</CODE>
+<CODE CLASS="western">  </CODE><CODE CLASS="western">let fileContent = fs.readFileSync(fileName, 'utf8');</CODE>
+
+<CODE CLASS="western">  </CODE><CODE CLASS="western">// Split the file content into an array of lines</CODE>
+<CODE CLASS="western">  </CODE><CODE CLASS="western">let lines = fileContent.split('\n');</CODE>
+
+<CODE CLASS="western">  </CODE><CODE CLASS="western">// Loop through the lines</CODE>
+<CODE CLASS="western">  </CODE><CODE CLASS="western">for (let i = 0; i &lt; lines.length; i++) {</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">// Remove any whitespace and non-alphanumeric characters</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">let cleanedLine = lines[i].replace(/[^a-zA-Z0-9 ]/g, '');</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">// Replacing remaining whitespace with underscores</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">cleanedLine = cleanedLine.replace(/\s+/g, '_');</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">// apply snake_case naming convention</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">cleanedLine = cleanedLine.toLowerCase();</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">// Create a folder with the cleaned line name</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">fs.mkdirSync(path.join(folderName, cleanedLine));</CODE>
+<CODE CLASS="western">  </CODE><CODE CLASS="western">}</CODE>
+<CODE CLASS="western">}</CODE>
+
+<CODE CLASS="western">// call the function</CODE>
+<CODE CLASS="western">cleanCategoryNames('myfolder','file.txt')</CODE></PRE><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+Please note that this function is not a complete solution, it may
+require additional error handling, and validation, it's just an
+example of how to create a function that does what you asked for.</P>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

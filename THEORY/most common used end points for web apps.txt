@@ -1,0 +1,27 @@
+a list of most common used end points for web apps 
+
+"/" (root endpoint) - This endpoint is used to retrieve the home page of the web application.
+
+"/login" - This endpoint is used to handle user login functionality.
+
+"/logout" - This endpoint is used to handle user logout functionality.
+
+"/register" - This endpoint is used to handle user registration functionality.
+
+"/profile" - This endpoint is used to retrieve the user's profile information.
+
+"/users" - This endpoint is used to retrieve a list of all users in the application.
+
+"/users/{id}" - This endpoint is used to retrieve the information for a specific user based on their ID.
+
+"/items" - This endpoint is used to retrieve a list of all items in the application.
+
+"/items/{id}" - This endpoint is used to retrieve the information for a specific item based on its ID.
+
+"/api" - This endpoint is used to handle all API calls for the web application.
+
+"/search" - This endpoint is used to handle search functionality in the web application.
+
+"/settings" - This endpoint is used to handle settings functionality in the web application.
+
+"/admin" - This endpoint is used to handle administrative functionality in the web application.

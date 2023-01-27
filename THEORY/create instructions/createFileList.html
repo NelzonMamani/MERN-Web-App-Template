@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.13  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Nelzon Mamani">
+	<META NAME="CREATED" CONTENT="20230126;13120587">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		PRE.cjk { font-family: "NSimSun", monospace }
+		CODE.cjk { font-family: "NSimSun", monospace }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">example of a
+Node.js script that takes a directory path as an argument, iterates
+over all files in that directory, writes the names of the files
+without their extensions to a file called <CODE CLASS="western">list.txt</CODE>,
+and uses the <CODE CLASS="western">fs</CODE> module to interact with
+the file system:</P>
+<PRE CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Copy code
+<CODE CLASS="western">const fs = require('fs');</CODE>
+<CODE CLASS="western">const path = require('path');</CODE>
+
+<CODE CLASS="western">function createFileList(dir) {</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">// read all files in directory</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">fs.readdir(dir, (err, files) =&gt; {</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">if (err) {</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">console.error(&quot;Error reading directory:&quot;, err);</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">return;</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">}</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">// create an array to store the new file names without extensions</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">let fileNamesWithoutExt = [];</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">// iterate over each file</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">files.forEach(file =&gt; {</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">// get the file name without the extension</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">let fileNameWithoutExt = path.parse(file).name;</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">// add the file name to the array</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">fileNamesWithoutExt.push(fileNameWithoutExt);</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">});</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">// write the array of file names to the list.txt file</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">fs.writeFile(&quot;list.txt&quot;, fileNamesWithoutExt.join(&quot;\n&quot;), (err) =&gt; {</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">if (err) {</CODE>
+<CODE CLASS="western">                </CODE><CODE CLASS="western">console.error(&quot;Error writing to file:&quot;, err);</CODE>
+<CODE CLASS="western">                </CODE><CODE CLASS="western">return;</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">}</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">console.log(&quot;File list created successfully!&quot;);</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">});</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">});</CODE>
+<CODE CLASS="western">}</CODE>
+
+<CODE CLASS="western">// usage</CODE>
+<CODE CLASS="western">createFileList(&quot;c:\\mp3&quot;);</CODE></PRE><P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+You can save this code as a file with a <CODE CLASS="western">.js</CODE>
+extension, for example <CODE CLASS="western">createFileList.js</CODE>,
+and then run it with <CODE CLASS="western">node createFileList.js</CODE>.</P>
+<P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">If you want
+this script to work as a standalone executable file, you can use a
+package like <CODE CLASS="western">pkg</CODE> to package it as an
+executable. You can install the <CODE CLASS="western">pkg</CODE>
+package globally using npm:</P>
+<PRE CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Copy code
+<CODE CLASS="western">npm install -g pkg</CODE></PRE><P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+Then, you can package your script using the following command:</P>
+<PRE CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Copy code
+<CODE CLASS="western">pkg createFileList.js</CODE></PRE><P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+This will create an executable file called <CODE CLASS="western">createFileList.exe</CODE>
+in the same directory as your script. You can then run this file on
+any Windows machine without needing to have Node.js installed.</P>
+<P STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

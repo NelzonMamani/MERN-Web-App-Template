@@ -1,0 +1,71 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.13  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Nelzon Mamani">
+	<META NAME="CREATED" CONTENT="20230126;13120587">
+	<META NAME="CHANGED" CONTENT="0;0">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		PRE.cjk { font-family: "NSimSun", monospace }
+		CODE.cjk { font-family: "NSimSun", monospace }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" DIR="LTR">
+<P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Script that
+takes a directory path as an argument, iterates over all files in
+that directory, writes the names of the files without their
+extensions to a file called <CODE CLASS="western">list.txt</CODE>,
+and uses the <CODE CLASS="western">fs</CODE> module to interact with
+the file system:</P>
+<P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm"><BR><BR>
+</P>
+<P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">here's an
+example of a Python script that does what you described using the os
+and os.path modules:</P>
+<PRE CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Copy code
+<CODE CLASS="western">import os</CODE>
+
+<CODE CLASS="western">def createFileList(path):</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western"># Get a list of all files in the directory</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">files = os.listdir(path)</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western"># Open a file called &quot;list.txt&quot; in write mode</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">with open(&quot;list.txt&quot;, &quot;w&quot;) as f:</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">for file in files:</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western"># Check if the file has an mp3 extension</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">if file.endswith(&quot;.mp3&quot;):</CODE>
+<CODE CLASS="western">                </CODE><CODE CLASS="western"># Remove the extension and write the filename to the file</CODE>
+<CODE CLASS="western">                </CODE><CODE CLASS="western">f.write(os.path.splitext(file)[0] + &quot;\n&quot;)</CODE>
+
+<CODE CLASS="western"># Call the function with the path to the mp3 directory</CODE>
+<CODE CLASS="western">createFileList(&quot;c:\\mp3&quot;)</CODE></PRE><P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+You can use the os.path.abspath() function to get the current working
+directory and use it instead of the hardcoded path.</P>
+<PRE CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">Copy code
+<CODE CLASS="western">import os</CODE>
+
+<CODE CLASS="western">def createFileList():</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">current_path = os.path.abspath(os.path.curdir)</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">files = os.listdir(current_path)</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western"># Open a file called &quot;list.txt&quot; in write mode</CODE>
+<CODE CLASS="western">    </CODE><CODE CLASS="western">with open(&quot;list.txt&quot;, &quot;w&quot;) as f:</CODE>
+<CODE CLASS="western">        </CODE><CODE CLASS="western">for file in files:</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western"># Check if the file has an mp3 extension</CODE>
+<CODE CLASS="western">            </CODE><CODE CLASS="western">if file.endswith(&quot;.mp3&quot;):</CODE>
+<CODE CLASS="western">                </CODE><CODE CLASS="western"># Remove the extension and write the filename to the file</CODE>
+<CODE CLASS="western">                </CODE><CODE CLASS="western">f.write(os.path.splitext(file)[0] + &quot;\n&quot;)</CODE>
+
+<CODE CLASS="western">createFileList()</CODE></PRE><P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+You can then use a library such as pyinstaller to convert the python
+script to a .exe file that you can run on Windows, using the command
+<CODE CLASS="western">pyinstaller --onefile script.py</CODE>.</P>
+<P STYLE="border: 1px solid #d9d9e3; padding: 0.05cm"><BR><BR>
+</P>
+</BODY>
+</HTML>

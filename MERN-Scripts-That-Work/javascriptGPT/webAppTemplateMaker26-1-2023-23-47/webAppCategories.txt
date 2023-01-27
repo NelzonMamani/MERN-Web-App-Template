@@ -1,0 +1,117 @@
+1. Social Media
+2. E-commerce
+3. News and Media
+4. Entertainment
+5. Video Streaming
+6. Productivity and collaboration
+7. Business management
+8. Education
+9. Health and Fitness
+10. Weather
+11. Job search and Recruitment
+12. Real Estate
+13. Financial
+14. Food and Recipes
+15. Reviews and Ratings
+16. Shopping
+17. Transportation
+18. Sports
+19. Government and Civic
+20. Travel planning
+21. Personal Organization
+22. Language Learning
+23. Booking and Reservation
+24. Online marketplace
+25. Gaming
+26. Photography
+27. Music
+28. Creative tools
+29. Online Learning
+30. Personal Development
+31. Event Planning
+32. Automotive
+33. Online Communities
+34. Legal Services
+35. Home Services
+36. Career development
+37. Mental Health
+38. Pet Services
+39. Fitness and Wellness
+40. Home Automation
+41. Environmental
+42. Charity and Volunteering
+43. Agriculture
+44. Government Services
+45. Cryptocurrency
+46. Astrology
+47. Art and Culture
+48. Fashion and Beauty
+49. Translation
+50. Robotics
+51. Virtual Reality
+52. Augmented Reality
+53. Internet of Things (IoT)
+54. Remote monitoring
+55. Telemedicine
+56. Location-based services
+57. Public Safety
+58. Fleet Management
+59. Human Resource Management (HRM)
+60. Logistics and Supply Chain Management
+61. Environmental monitoring
+62. Public transportation
+63. Parking management
+64. Energy management
+65. E-governance
+66. Crowdfunding
+67. Polling and Surveys
+68. Online Auction
+69. Online marketplace for services
+70. Online marketplaces for renting/leasing
+71. Online voting
+72. Online Notary
+73. Online Therapy
+74. Online tutoring
+75. Online legal services
+76. Online mental health support
+77. Online language classes
+78. Online certification
+79. Online financial advice
+80. Online self-defense classes
+81. Online pet services
+82. Online home services
+83. Online personal shopping and styling
+84. Online home design and renovation
+85. Online dating
+86. Online booking and reservations
+87. Online mental health support
+88. Online legal advice
+89. Online personal coaching
+90. Online personal finance management
+91. Online mental wellness
+92. Online career development
+93. Online personal safety
+94. Online healthy living
+95. Online personal shopping
+96. Online mental health support
+97. Online home security
+98. Online fitness tracking
+99. Online mental health support
+100. Online personal growth
+101. Artificial Intelligence (AI) and Machine Learning (ML)
+102. Blockchain
+103. Internet of Things (IoT)
+104. Virtual and Augmented Reality (VR/AR)
+105. 5G and Edge Computing
+106. Automation
+107. Personalized and Predictive Applications
+108. Proximity-based services
+109. Digital Twin
+110. Drones
+111. Chatbots and Virtual Assistants
+112. Cybersecurity
+113. Digital identity and authentication
+114. Digital health
+115. Smart cities
+116. Digital twin for cities
+
