@@ -1,0 +1,551 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice 4.1.13  (Win32)">
+	<META NAME="AUTHOR" CONTENT="Nelzon Mamani">
+	<META NAME="CREATED" CONTENT="20230125;23341900">
+	<META NAME="CHANGEDBY" CONTENT="Nelzon Mamani">
+	<META NAME="CHANGED" CONTENT="20230130;394920">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm; direction: ltr; color: #000000; widows: 0; orphans: 0 }
+		P.western { font-family: "Times New Roman", serif; font-size: 12pt; so-language: en-GB }
+		P.cjk { font-family: "SimSun"; font-size: 12pt; so-language: zh-CN }
+		P.ctl { font-family: "Arial", sans-serif; font-size: 12pt; so-language: hi-IN }
+		CODE.cjk { font-family: "NSimSun", monospace }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-GB" TEXT="#000000" DIR="LTR">
+<P CLASS="western" ALIGN=CENTER><FONT SIZE=5>Endpoints for
+Authentication, Authorization and Security in </FONT><FONT SIZE=6 STYLE="font-size: 22pt">authServer.js</FONT></P>
+<P CLASS="western" ALIGN=CENTER><BR><BR>
+</P>
+<OL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /register - Register a new user</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /login - Log a user in and issue access and refresh tokens</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /logout - Log a user out and revoke access token</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /logoutAll - Log a user out on all devices and revoke all
+	access tokens</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /validate - Verify and validate access token</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /refresh - Issue a new access token using a refresh token</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /revoke - Revoke a refresh token</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /blacklist - Retrieve the blacklist of revoked tokens</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /blacklist - Add a token to the blacklist</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	DELETE /blacklist/:id - Remove a token from the blacklist</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /rate_limit - Retrieve the rate limiting information for an IP
+	address</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /rate_limit - Add an IP address to the rate limiter</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	DELETE /rate_limit/:id - Remove an IP address from the rate limiter</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /forgot_password - Send password reset link to user's email</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /reset_password - Reset user's password</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /confirm_email - Confirm a user's email address</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /block_ip - Block an IP address from accessing the server</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	DELETE /block_ip/:id - Remove an IP address from the blocked list.</P>
+</OL>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER><FONT SIZE=5>List of endpoints for
+authServer.js that handles authentication, authorization, and
+security:</FONT></P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER>Endpoints and Their Requirements,
+Assumptions, and Responses for authServer.js&quot;</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<OL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /register - Registers a new user</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid email, password and username</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The email is unique and the password meets certain
+		security requirements (e.g. at least 8 characters, a mix of letters
+		and numbers)</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if registration
+		fails</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /login - Logs in a user</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid email and password for a registered user</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The email and password match a user in the database</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message with access and refresh tokens, or an
+		error message if login fails</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /logout - Logs out a user</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The access token belongs to a logged in user</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the token is
+		invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /logoutAll - Logs out a user from all devices</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The access token belongs to a logged in user</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the token is
+		invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /token/refresh - Issues a new access token using a refresh
+	token</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid refresh token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The refresh token belongs to a logged in user and has
+		not expired</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message with a new access token, or an error
+		message if the refresh token is invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /token/verify - Verify the validity of an access token</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The access token belongs to a logged in user and has
+		not expired</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the token is
+		invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /token/revoke - Revokes an access token</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The access token belongs to a logged in user</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the token is
+		invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /block - Block an IP address</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid IP address</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The IP address is not already blocked</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the IP address is
+		invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /blacklist - Retrieves a list of blocked IP addresses</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: None</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: None</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A list of blocked IP addresses</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /password/forgot - Handles a forgot password request</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid email for a registered user</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The email belongs to a registered user</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the email is
+		invalid</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /password/reset - Handles a password reset request</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirements: A valid email, new password and reset token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumptions: The email and reset token belong to a registered user
+		and the reset token is valid</P>
+		<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A success message, or an error message if the request is
+		invalid</P>
+	</UL>
+</OL>
+<OL START=12>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /confirm - Confirms a user's email address</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid token sent to the user's email address</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user has already registered and requested for email
+		confirmation</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the email address has been
+		confirmed, and the user is now able to login</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /forgot-password - Initiates the password reset process</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid email address</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The email address is associated with an existing user
+		account</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that an email has been sent with
+		instructions on how to reset the password</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /reset-password - Resets the user's password</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid token sent to the user's email address and a
+		new password</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user has initiated the password reset process and
+		is now providing a new password</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the password has been reset, and
+		the user is now able to login</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /refresh-token - Issues a new access token using a valid refresh
+	token</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid refresh token and user's ID</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user has a valid refresh token stored in the
+		database</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A new access token</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /logout - Logs out the user from the current session</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user is currently logged in</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the user has been logged out</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /logoutAll - Logs out the user from all sessions</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user is currently logged in</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the user has been logged out from
+		all sessions</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	PUT /users/:id - Update user's information</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid access token and updated information</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user is currently logged in and wants to update
+		their information</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the user's information has been
+		updated</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	DELETE /users/:id - Delete a user's account</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user is currently logged in and wants to delete
+		their account</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the user's account has been
+		deleted</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /users/:id - Retrieve user's information</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: A valid access token</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: The user is currently logged in and wants to retrieve
+		their information</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: The user's information</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /block-ip - Block an IP address</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: IP address to be blocked</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: None</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the IP address has been blocked</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	DELETE /block-ip - Unblock an IP address</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: IP address to be unblocked</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: None</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A message indicating that the IP address has been unblocked</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /block-ip - Retrieve all blocked IP addresses</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: None</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Assumption: None</P>
+		<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+		Output: A list of all blocked IP addresses</P>
+	</UL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /rate-limit - Set rate limit for an IP address or user</P>
+	<UL>
+		<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+		Requirement: IP address or user</P>
+	</UL>
+</OL>
+<P CLASS="western" ALIGN=LEFT> 
+</P>
+<P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+Sure, here are the remaining endpoints for the authServer:</P>
+<OL START=24>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	PUT /users/password - Updates a user's password</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid user session and a valid password reset token</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: User's identity has been verified and the new password
+	meets the required complexity standards</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the password update is successful, or
+	an error message otherwise</P>
+</UL>
+<OL START=25>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	PUT /users/revoke - Revokes a user's access and refresh tokens</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid user session and a valid admin session</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: User's identity has been verified and admin has the
+	necessary permissions to revoke tokens</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the token revocation is successful, or
+	an error message otherwise</P>
+</UL>
+<OL START=26>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /blacklist - Blacklists a user's access and refresh tokens</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid user session and a valid admin session</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: User's identity has been verified and admin has the
+	necessary permissions to blacklist tokens</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the token blacklisting is successful,
+	or an error message otherwise</P>
+</UL>
+<OL START=27>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /blacklist - Checks if a token is blacklisted</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid token</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: The token provided is a valid JWT</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the token is blacklisted, or an error
+	message otherwise</P>
+</UL>
+<OL START=28>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /ratelimit - Returns the current rate limiting status for a
+	user's IP</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid IP address</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: None</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: The current rate limiting status for the provided IP address</P>
+</UL>
+<OL START=29>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	POST /blockip - Blocks an IP address from making requests</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid admin session</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: Admin has the necessary permissions to block IP
+	addresses</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the IP blocking is successful, or an
+	error message otherwise</P>
+</UL>
+<OL START=30>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	GET /blockip - Checks if an IP address is blocked</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid IP address</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: None</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the provided IP address is blocked, or
+	an error message otherwise</P>
+</UL>
+<OL START=31>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	DELETE /blockip - Unblocks an IP address</P>
+</OL>
+<UL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Requirement: A valid admin session</P>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0cm; border: 1px solid #d9d9e3; padding: 0.05cm">
+	Assumptions: Admin has the necessary permissions to unblock IP
+	addresses</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #d9d9e3; padding: 0.05cm">
+	Output: A success message if the IP unblocking is successful, or an
+	error message otherwise</P>
+</UL>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=LEFT><BR><BR>
+</P>
+<P CLASS="western" ALIGN=CENTER><FONT SIZE=5>list of the endpoints
+for </FONT><FONT SIZE=6 STYLE="font-size: 22pt"><B>authServer.js</B></FONT><FONT SIZE=6 STYLE="font-size: 28pt"><B>
+</B></FONT><FONT SIZE=5> </FONT>
+</P>
+<P CLASS="western" ALIGN=CENTER><FONT SIZE=5>and a brief description
+of their functionality:</FONT></P>
+<P CLASS="western" ALIGN=CENTER><BR><BR>
+</P>
+<OL>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /register</CODE>: This endpoint handles
+	user registration by accepting a request with a JSON object
+	containing the user's email and password. It then hashes the
+	password, creates a new user object, and saves it to the database.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /login</CODE>: This endpoint handles user
+	login by accepting a request with a JSON object containing the
+	user's email and password. It then compares the provided password to
+	the hashed password stored in the database for that user. If they
+	match, it issues an access token and a refresh token, which are sent
+	back to the user in the response.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /logout</CODE>: This endpoint handles
+	user logout by accepting a request with a valid access token. It
+	then invalidates the token and sends a response indicating that the
+	user has been logged out.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /logoutAll</CODE>: This endpoint handles
+	user logout from all devices by accepting a request with a valid
+	access token. It then invalidates the token and sends a response
+	indicating that the user has been logged out from all devices.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /token</CODE>: This endpoint handles
+	token validation by accepting a request with a valid refresh token.
+	It then checks the database to see if the token is valid and has not
+	been revoked. If it is valid, it issues a new access token and sends
+	it back in the response.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">GET /secure</CODE>: This endpoint handles user
+	authentication and authorization by requiring a valid access token
+	to be provided in the request header. If the token is valid, it
+	sends a response indicating that the user is authenticated and
+	authorized.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /revoke</CODE>: This endpoint handles
+	token revocation by accepting a request with a valid refresh token.
+	It then marks the token as revoked in the database, so it can no
+	longer be used to issue new access tokens.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">GET /</CODE>: This endpoint handles rate
+	limiting by only allowing a certain number of requests from a single
+	IP address within a certain time period.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">GET /</CODE>: This endpoint handles IP
+	blocking by denying requests from certain IP addresses.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /forgot</CODE>: This endpoint handles
+	forgot password functionality by accepting a request with a user's
+	email address. It then sends an email to that address containing a
+	link to reset the password.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /reset</CODE>: This endpoint handles
+	reset password functionality by accepting a request with a user's
+	email address, new password, and a reset token. It then hashes the
+	new password, updates the user's password in the database, and sends
+	a response indicating that the password has been reset.</P>
+	<LI><P CLASS="western" STYLE="border: 1px solid #c0c0c0; padding: 0.04cm">
+	<CODE CLASS="western">POST /confirm</CODE>: This endpoint handles
+	account confirmation via email by accepting a request with a user's
+	email address and confirmation token. It then confirms the user
+	account and sends a response indicating that the account has been
+	confirmed.</P>
+</OL>
+<P CLASS="western" ALIGN=LEFT STYLE="margin-bottom: 0cm"><BR>
+</P>
+</BODY>
+</HTML>

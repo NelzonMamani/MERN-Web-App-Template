@@ -1,0 +1,74 @@
+backend
+├── config
+│   ├── config.js
+│   └── ...
+├── models
+│   ├── User.js
+│   ├── Role.js
+│   ├── Permission.js
+│   ├── Token.js
+│   ├── ... (other models)
+├── routes
+│   ├── authRoutes.js
+│   ├── userRoutes.js
+│   ├── roleRoutes.js
+│   ├── permissionRoutes.js
+│   ├── ... (other routes)
+├── controllers
+│   ├── authController.js
+│   ├── userController.js
+│   ├── roleController.js
+│   ├── permissionController.js
+│   ├── ... (other controllers)
+├── middlewares
+│   ├── authMiddleware.js
+│   ├── validationMiddleware.js
+│   ├── ... (other middlewares)
+├── services
+│   ├── tokenService.js
+│   ├── ... (other services)
+├── tests
+│   ├── authRoutes.test.js
+│   ├── userRoutes.test.js
+│   ├── roleRoutes.test.js
+│   ├── permissionRoutes.test.js
+│   ├── ... (other tests)
+├── .env
+├── server.js
+├── authServer.js
+└── package.json
+
+
+backend
+├── config
+│   ├── config.js
+├── models
+│   ├── Post.js
+│   ├── User.js
+│   ├── Comment.js
+│   └── ...
+├── routes
+│   ├── postRoutes.js
+│   ├── userRoutes.js
+│   ├── commentRoutes.js
+│   └── ...
+├── controllers
+│   ├── postController.js
+│   ├── userController.js
+│   ├── commentController.js
+│   └── ...
+├── middlewares
+│   ├── auth.js
+│   ├── userValidation.js
+│   ├── commentValidation.js
+│   ├── postValidation.js
+│   └── ...
+├── tests
+│   ├── postRoutes.test.js
+│   ├── userRoutes.test.js
+│   ├── commentRoutes.test.js
+│   └── ...
+├── .env
+├── server.js
+├── authServer.js
+└── package.json

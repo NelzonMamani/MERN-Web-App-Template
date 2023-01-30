@@ -6,11 +6,12 @@ function cleanCategoryNames(folderName, fileName) {
   // // Create the main folder
   // fs.mkdirSync(folderName);
 
-  // Create the main folder
+  // Create the main folder. Check if folder directory already exists
   if(!fs.existsSync(folderName)){
+    // If the folder directory does not exist, create it
     fs.mkdirSync(folderName);
   } 
-
+ 
   // Read the contents of the file
   let fileContent = fs.readFileSync(fileName, "utf8");
 
@@ -51,15 +52,72 @@ function cleanCategoryNames(folderName, fileName) {
     createServer(backendfolder);
     //create authServer.js file
     createAuthServer(backendfolder);
+
+    //create config.js file
+    createConfig(backendfolder);
+    // it works :)
+    //createConfig("c:\\mp3");
+
+   
   }
 }
 
 //create README.txt file function
 function createReadMe(subdirectory) {
-  let readMeContent = "Under construction";
+  let readMeContent = `${subdirectory} 
+
+   
+  This template is a starting point for ${path.basename(subdirectory)} 
+  so you don't have to spend hours writing basic common files and code 
+  
+  .env needs to be hiddend and included in the .ignore file
+  I just left it out for teaching purposes  
+
+  `;
   // Write the README.txt file
   fs.writeFileSync(path.join(subdirectory, "README.txt"), readMeContent);
   console.log("README.txt file created successfully");
+}
+
+// Create config folder and create config.js file with template
+// You can use this function by passing the path of the backendfolder, where you want to create the config folder and the config.js file. 
+// createConfig('path/to/backendfolder'); 
+function createConfig(backendfolder) {
+  const configFolder = `${backendfolder}/config`;
+  const configFile = `${configFolder}/config.js`;
+
+  try {
+    // Create config folder
+    fs.mkdirSync(configFolder);
+
+    // Create config.js file with template
+    fs.writeFileSync(configFile, `require('dotenv').config()
+const port = process.env.PORT;
+const authServerPort = process.env.AUTH_SERVER_PORT;
+const localMongoUri = process.env.LOCAL_MONGO_URI;
+const mongoUri = process.env.MONGO_URI;
+const accessTokenSecret = process.env.ACCESS_TOKEN_SECRET;
+const refreshTokenSecret = process.env.REFRESH_TOKEN_SECRET;
+const jwtExpire = process.env.JWT_EXPIRE;
+const jwtRefreshExpire = process.env.JWT_REFRESH_EXPIRE;
+    
+module.exports = {
+    port,
+    authServerPort,
+    localMongoUri,
+    mongoUri,
+    accessTokenSecret,
+    refreshTokenSecret,
+    jwtExpire,
+    jwtRefreshExpire
+}
+
+`);
+
+    console.log(`config.js file created successfully in ${configFolder}`);
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 //create .env file function
@@ -215,7 +273,7 @@ console.log(\`Auth server started on port \${process.env.AUTH_SERVER_PORT}\`);
 }
 
 // Example usage:
-const folderName = "web-app-projects";
+const folderName = "web-app-projects2023";
 const fileName = "webAppCategories.txt";
 cleanCategoryNames(folderName, fileName);
 
