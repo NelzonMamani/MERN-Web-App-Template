@@ -1,6 +1,10 @@
-web-app-projects2023\68_online_auction is under construction 
+web-app-projects2023\68_online_auction 
+
+   
+  This template is a starting point for 68_online_auction 
+  so you don't have to spend hours writing basic common files and code 
   
-  .env needs to be included in the .ignore file
-  I just left it out for teaching purposes but it needs to be hidden
+  .env needs to be hiddend and included in the .ignore file
+  I just left it out for teaching purposes  
 
   
